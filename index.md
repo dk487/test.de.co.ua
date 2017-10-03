@@ -1,5 +1,9 @@
 ---
-title: Hello, world!
+title: Тестовый сайт
 ---
 
-This is very basic test site.
+Ну, короче, тут всякая фигня.
+
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url }})
+{% endfor %}
