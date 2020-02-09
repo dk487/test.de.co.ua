@@ -7,7 +7,7 @@ title: Тестовый сайт
 - [Как сделать такой сайт](tools.html)
 
 Что тут нового
-------------
+--------------
 
 {% for post in site.posts %}
 - [{{ post.title }}]({{ post.url }})
