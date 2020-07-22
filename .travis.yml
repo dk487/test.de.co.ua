@@ -1,3 +1,13 @@
-language: ruby
-install: gem install jekyll html-proofer
-script: jekyll build && htmlproofer ./_site
+dist: bionic
+
+before_install:
+  - sudo apt-get -q update
+  - sudo apt-get -y install ruby-full make gcc build-essential libcurl4 zlib1g-dev
+  - sudo gem install jekyll html-proofer
+
+jobs:
+  include:
+    - stage: build
+      script: jekyll build
+    - stage: test
+      script: htmlproofer ./_site
