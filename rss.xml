@@ -1,0 +1,21 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>{{ site.title }}</title>
+  <link>{{ site.url }}{{ site.baseurl }}</link>
+  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+  <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+  <ttl>21600</ttl>
+{%  for _item in site.posts limit: 10 %}
+  <item>
+    <title>{{ _item.title | xml_escape }}</title>
+    <description>{{ _item.excerpt | strip | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}{{ _item.url }}</link>
+    <pubDate>{{ _item.date | date_to_rfc822 }}</pubDate>
+  </item>
+{%    endfor %}
+</channel>
+</rss>
