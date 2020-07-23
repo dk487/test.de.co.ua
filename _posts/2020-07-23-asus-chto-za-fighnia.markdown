@@ -32,8 +32,8 @@ Assertion failed. Tadadadam. Отлично, блядь, просто отлич
 
 Теперь мне как-то стрёмно ставить эту прошивку.
 
-Cross-post: http://kastaneda.kiev.ua/2020/07/23/asus-md5-wtf.html
-Cross-post: https://kastaneda.dreamwidth.org/556980.html
+Cross-post: [kastaneda.kiev.ua/2020/07/23/asus-md5-wtf.html](https://kastaneda.kiev.ua/2020/07/23/asus-md5-wtf.html)<br>
+Cross-post: [kastaneda.dreamwidth.org/556980.html](https://kastaneda.dreamwidth.org/556980.html)
 
 [1]: https://www.asus.com/Networking/RT-AC58U/HelpDesk_BIOS/
 [2]: https://www.asus.com/ua-ua/Networking/RT-AC58U/HelpDesk_BIOS/
