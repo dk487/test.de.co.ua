@@ -1,15 +1,3 @@
 language: ruby
-dist: bionic
-cache: bundler
-
-before_install:
-# - apt-get -q update
-# - apt-get -y install ruby-full make gcc build-essential libcurl4 zlib1g-dev
-  - gem install jekyll html-proofer
-
-jobs:
-  include:
-    - stage: build
-      script: jekyll build
-    - stage: test
-      script: htmlproofer ./_site
+before_install: gem install jekyll html-proofer
+script: jekyll build && htmlproofer ./_site
