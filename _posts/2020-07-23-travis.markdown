@@ -1,0 +1,21 @@
+---
+title: Travis CI
+date: 2020-07-23 03:30:00 +03:00
+---
+Пытаюсь обновить `.travis.yml`, а то там чёрт знает что, и оно не кешируется. Каждый билд по три минуты, и всё это время уходит на `gem install` — ну куда это годится
+
+Написал типа как красивый файл, разбил на два stage, и сижу жду, что оно соберётся. А оно не собирается. И я ХЗ как его отдебажить, потому что не знаю, что они напихали в свой стандартный образ.
+
+```
+docker run -it --rm -v `pwd`:/target ubuntu:bionic
+
+apt-get -q update
+apt-get -y install ruby-full make gcc build-essential libcurl4 zlib1g-dev
+gem install jekyll html-proofer
+
+cd /target
+jekyll build
+htmlproofer ./_site
+```
+
+И, кажется, у меня даже локально нихрена не получается. O kurwa.
