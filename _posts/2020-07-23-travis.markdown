@@ -19,3 +19,7 @@ htmlproofer ./_site
 ```
 
 И, кажется, у меня даже локально нихрена не получается. O kurwa.
+
+```
+htmlproofer 3.15.3 | Error:  "\xD0" on US-ASCII
+```
