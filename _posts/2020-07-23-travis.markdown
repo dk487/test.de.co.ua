@@ -23,3 +23,13 @@ htmlproofer ./_site
 ```
 htmlproofer 3.15.3 | Error:  "\xD0" on US-ASCII
 ```
+
+Upd.: а, вот оно в чём дело.
+
+```
+apt install locales locales-all
+LC_ALL=en_US.UTF-8
+export LC_ALL
+
+htmlproofer ./_site
+```
