@@ -11,4 +11,4 @@ date: 2018-11-23 22:32:00 +02:00
 
 P.S.: скриншот на память —
 
-![ubuntu.png](/uploads/ubuntu.png)
+[![ubuntu.png](/uploads/ubuntu.png)](/uploads/ubuntu.png)
