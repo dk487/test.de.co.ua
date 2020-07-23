@@ -1,9 +1,11 @@
+language: ruby
 dist: bionic
+cache: bundler
 
 before_install:
-  - sudo apt-get -q update
-  - sudo apt-get -y install ruby-full make gcc build-essential libcurl4 zlib1g-dev
-  - sudo gem install jekyll html-proofer
+# - apt-get -q update
+# - apt-get -y install ruby-full make gcc build-essential libcurl4 zlib1g-dev
+  - gem install jekyll html-proofer
 
 jobs:
   include:
