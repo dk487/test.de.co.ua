@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ page.title | escape }}</title>
         <style>
-            body { max-width: 50em; padding: 2em; margin: 0 auto }
+            body { max-width: 50em; padding: 1em; margin: 0 auto }
             h1 { border-bottom: medium solid }
             footer { border-top: thin solid }
             img { max-width: 100%; height: auto }
@@ -13,13 +13,18 @@
     </head>
     <body>
 
-        <h1>{{ page.title | escape }}</h1>
-        {{ content }}
+        <main>
+            <h1>{{ page.title | escape }}</h1>
+            {{ content }}
+        </main>
 
         <footer>
             <p>
                 © dk487
-                | <a href="/rss.xml">RSS</a>
+{%- if page.url != "/" %}
+                | <a href="/">Home</a>
+{%- endif %}
+                | <a href="/rss.xml" type="application/rss+xml">RSS</a>
                 | <a href="https://github.com/dk487/test.de.co.ua">Github</a>
             </p>
         </footer>
