@@ -9,4 +9,4 @@ Update: перенёс в [отдельную репу][2] + сделал [хо�
 
 [1]: https://github.com/kastaneda/sandbox2020.de.co.ua/blob/master/traffic_lights/index.html
 [2]: https://github.com/kastaneda/svitlofor.de.co.ua
-[3]: 
+[3]: https://svitlofor.de.co.ua/
