@@ -1,6 +1,10 @@
 ---
 title: Тестовый сайт
 timezone: Europe/Kiev
+exclude:
+  - README.md
+  - CNAME
+  - Makefile
 collections:
   posts:
     title: Posts
