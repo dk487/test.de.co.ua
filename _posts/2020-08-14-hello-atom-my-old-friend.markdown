@@ -18,8 +18,31 @@ Upd.#2: спробую скласти мій _персональний хіт-п
 +------------------+---------------------+------------+------+
 | Feature          | Atom                | VSCode     | Wins |
 +------------------+---------------------+------------+------+
-| Markdown         | No bold/italic      | Nice look  | Code |
-| MD preview       | Ctrl-Stift-M        | Button     | Code |
+| Markdown style   | No bold/italic      | Nice look  | Code |
+| MD preview       | `Ctrl-Stift-M`      | Button     | Code |
 | Projects/folders | «Add folder to…»    | Workspace? | Atom |
-| Commit           | Bottom right icon   | Left bar   | Code |
+| Git commit       | Bottom right icon   | Left bar   | Code |
 +------------------+---------------------+------------+------+
+
+### Markdown style
+
+Коли я редагую Markdown, я хочу бачити **bold** та _italic_ безпосередньо. Не обов'язково через font-weight та font-style, це може бути колір / фон / font-decoration. Курва, я хочу бачити заголовки та посилання!
+
+Схоже, що Atom з пакетом `language-markdown` ніяк не підсвічує стилі. А ось у VSCode все добре з цим.
+
+
+### Markdown preview
+
+Ну, це дрібниці.
+
+
+### Projects/folders
+
+Є чітке відчуття, що у Atom'і ліва панель — це мої проекти (каталогі) і нічого більше. Легко відкрити, легко закрити, нічого зайвого.
+
+VSCode напхав туди все. І головне ­— там відбувається git add / git commit.
+
+
+### Git commit
+
+Визнаю. VSCode зручніше. Натиснув «плюсики» на потрібних файлах, написав commit message, `Ctrl-Enter`.
