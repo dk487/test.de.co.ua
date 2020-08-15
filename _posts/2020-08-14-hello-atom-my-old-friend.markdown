@@ -19,14 +19,12 @@ Upd.: запустив і те, і інше. Гмм.
 
 Upd.#2: спробую скласти мій _персональний хіт-парад_ у табличку.
 
-+------------------+---------------------+------------+------+
-| Feature          | Atom                | VSCode     | Wins |
-+------------------+---------------------+------------+------+
-| Markdown style   | No bold/italic      | Nice look  | Code |
-| MD preview       | `Ctrl-Stift-M`      | Button     | Code |
-| Projects/folders | «Add folder to…»    | Workspace? | Atom |
-| Git commit       | Bottom right icon   | Left bar   | Code |
-+------------------+---------------------+------------+------+
+ Feature          | Atom                | VSCode     | Wins 
+------------------|---------------------|------------|------
+ Markdown style   | No bold/italic      | Nice look  | Code 
+ MD preview       | `Ctrl-Stift-M`      | Button     | Code 
+ Projects/folders | «Add folder to…»    | Workspace? | Atom 
+ Git commit       | Bottom right icon   | Left bar   | Code 
 
 
 ### Markdown style
