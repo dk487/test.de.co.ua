@@ -1,10 +1,6 @@
 ---
 title: Тестовый сайт
 timezone: Europe/Kiev
-exclude:
-  - README.md
-  - CNAME
-  - Makefile
 collections:
   posts:
     title: Posts
@@ -22,3 +18,7 @@ defaults:
     type: posts
   values:
     layout: post
+exclude:
+- README.md
+- CNAME
+- Makefile
