@@ -1,5 +1,5 @@
 ---
-title: New command: make post
+title: New Makefile target
 date: 2020-08-16 18:39:33 +0300
 ---
 
