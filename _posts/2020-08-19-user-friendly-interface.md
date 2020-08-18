@@ -1,5 +1,5 @@
 ---
-title: User friendly interface
+title: User-friendly interface
 date: 2020-08-19 02:48:32 +0300
 ---
 
