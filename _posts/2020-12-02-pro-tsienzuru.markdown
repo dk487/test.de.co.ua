@@ -5,6 +5,8 @@ date: 2020-12-02 16:46:00 +02:00
 
 Читаю моторошні історії по хештегу [#facebookdisabledme][1] і бачу, що це пиздець.
 
+
+
 Cross-post: <https://twitter.com/kastaneda/status/1334147616901369859>
 
 [1]: https://twitter.com/hashtag/facebookdisabledme
