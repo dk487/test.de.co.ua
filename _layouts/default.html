@@ -1,45 +1,44 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ page.title | escape }}</title>
-        <style>
-            body { max-width: 50em; padding: 1em; margin: 0 auto }
-            h1 { border-bottom: medium solid }
-            footer { border-top: thin solid }
-            img { max-width: 100%; height: auto }
-            p, dt { margin: .5em 0 }
-            dd { margin: .5em 0 .5em 1.5em }
-            table, th, td { border: thin solid; border-collapse: collapse }
-            th, td { padding: .25em .5em }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | escape }}</title>
+    <style>
+      body { max-width: 50em; padding: 1em; margin: 0 auto }
+      h1 { border-bottom: medium solid }
+      footer { border-top: thin solid }
+      img { max-width: 100%; height: auto }
+      p, dt { margin: .5em 0 }
+      dd { margin: .5em 0 .5em 1.5em }
+      table, th, td { border: thin solid; border-collapse: collapse }
+      th, td { padding: .25em .5em }
 {%- if content contains "<code>" %}
-            .c, .cm, .cp, .c1 { color: #999; font-style: italic }
-            .k, .o, .kc, .ow { font-weight: bold }
-            .m, .mf, .mh, .mi, .mo { color: #099 }
-            .s, .s1, .s2 { color: #d14 }
-            .sc, .se, .sr { color: #609 }
-            .nv, .vg, .vc { color: #090 }
+      .c, .cm, .cp, .c1 { color: #999; font-style: italic }
+      .k, .o, .kc, .ow { font-weight: bold }
+      .m, .mf, .mh, .mi, .mo { color: #099 }
+      .s, .s1, .s2 { color: #d14 }
+      .sc, .se, .sr { color: #609 }
+      .nv, .vg, .vc { color: #090 }
 {%- endif %}
-        </style>
-        <link rel="alternate" type="application/rss+xml" href="/rss.xml">
-    </head>
-    <body>
+    </style>
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml">
+  </head>
+  <body>
+    <main>
+      <h1>{{ page.title | escape }}</h1>
 
-        <main>
-            <h1>{{ page.title | escape }}</h1>
-            {{ content }}
-        </main>
+{{ content }}
 
-        <footer>
-            <p>
-                © dk487
+    </main>
+    <footer>
+      <p>
+        © dk487
 {%- if page.url != "/" %}
-                | <a href="/">Home</a>
+        | <a href="/">Home</a>
 {%- endif %}
-                | <a href="/rss.xml" type="application/rss+xml">RSS</a>
-                | <a href="https://github.com/dk487/test.de.co.ua">Github</a>
-            </p>
-        </footer>
-
-    </body>
+        | <a href="/rss.xml" type="application/rss+xml">RSS</a>
+        | <a href="https://github.com/dk487/test.de.co.ua">Github</a>
+      </p>
+    </footer>
+  </body>
 </html>
