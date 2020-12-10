@@ -12,6 +12,14 @@
             dd { margin: .5em 0 .5em 1.5em }
             table, th, td { border: thin solid; border-collapse: collapse }
             th, td { padding: .25em .5em }
+{%- if content contains "<code>" %}
+            .c, .cm, .cp, .c1 { color: #999; font-style: italic }
+            .k, .o, .kc, .ow { font-weight: bold }
+            .m, .mf, .mh, .mi, .mo { color: #099 }
+            .s, .s1, .s2 { color: #d14 }
+            .sc, .se, .sr { color: #609 }
+            .nv, .vg, .vc { color: #090 }
+{%- endif %}
         </style>
         <link rel="alternate" type="application/rss+xml" href="/rss.xml">
     </head>
