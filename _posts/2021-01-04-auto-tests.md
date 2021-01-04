@@ -22,3 +22,4 @@ date: 2021-01-04 21:28:50 +0200
 
 [1]: https://travis-ci.org/
 [2]: https://travis-ci.org/github/dk487/test.de.co.ua/builds/751147571
+[3]: https://github.com/gjtorikian/html-proofer
