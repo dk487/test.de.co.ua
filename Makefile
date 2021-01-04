@@ -16,7 +16,7 @@ build:
 test:
 	$(HTMLPROOFER) ./_site \
 		--assume-extension \
-		--url-ignore "/twitter.com/,/kastaneda.kiev.ua/" \
+		--http-status-ignore "0,400" \
 		--check-html \
 		--check-opengraph \
 		--check-sri \
