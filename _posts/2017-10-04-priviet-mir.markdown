@@ -12,4 +12,4 @@ date: 2017-10-04 00:00:00 +03:00
 - учётная запись в SiteLeaf, где я сейчас это пишу.
 
 [1]: https://github.com/dk487/test.de.co.ua
-[2]: http://test.de.co.ua/
+[2]: https://test.de.co.ua/
