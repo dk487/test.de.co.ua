@@ -1,10 +1,20 @@
+ROOT := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
+
+ifeq ($(APP_ENV), test)
+  JEKYLL := docker run --rm -v $(ROOT):/srv/jekyll jekyll/jekyll jekyll
+  HTMLPROOFER := docker run --rm -v $(ROOT)_site:/_site 18fgsa/html-proofer
+else
+  JEKYLL := jekyll
+  HTMLPROOFER := htmlproofer
+endif
+
 all: build test
 
 build:
-	jekyll build
+	$(JEKYLL) build
 
 test:
-	htmlproofer ./_site \
+	$(HTMLPROOFER) ./_site \
 		--assume-extension \
 		--url-ignore "/twitter.com/,/kastaneda.kiev.ua/" \
 		--check-html \
