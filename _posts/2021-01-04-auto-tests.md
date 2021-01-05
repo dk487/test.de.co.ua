@@ -22,6 +22,8 @@ date: 2021-01-04 21:28:50 +02:00
 
 Upd.: починив одне, вилізло інше. Срань яка ці тести.
 
+Upd.#2: ну нарешті все працює. Travis CI чомусь на пошту не пише про це; цікаво, який сенс білдів без відповідного інформування?
+
 [1]: https://travis-ci.org/
 [2]: https://travis-ci.org/github/dk487/test.de.co.ua/builds/751147571
 [3]: https://github.com/gjtorikian/html-proofer
