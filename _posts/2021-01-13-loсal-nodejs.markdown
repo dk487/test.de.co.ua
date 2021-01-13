@@ -13,10 +13,10 @@ date: 2021-01-13 05:39:00 +02:00
 
 Сьогодні я здався і встановив в тому біореакторі кляту ноду саме так, як йшлося у моєму жарті.
 
-'''
+```sh
 npm set prefix ~/.local
 npm install -g npm
 npm install -g node
-'''
+```
 
 [1]: https://twitter.com/kastaneda/status/1299545926881640451
