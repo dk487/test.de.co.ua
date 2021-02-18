@@ -9,7 +9,7 @@ date: 2021-02-18 07:32:00 +02:00
 
 Щоб постити в Dreamwidth, є [відповідне API][2]. Треба конвертувати контент з Markdown до фрагмента HTML (як це робить Pandoc за замовчанням), зробити  новий пост з `opt_preformatted: true`, отримати `itemid` та `url` у відповідь та зберігати його у front matter.
 
-Треба пошукати, як автоматично робити пости до Diaspora.
+Треба пошукати, як автоматично робити пости до Diaspora. Принаймні, конвертувати нічого не треба.
 
 [1]: https://test.de.co.ua/2021/02/18/chromium-end.html
 [2]: https://www.livejournal.com/doc/server/ljp.csp.flat.postevent.html
