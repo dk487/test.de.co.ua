@@ -11,5 +11,8 @@ date: 2021-02-18 07:32:00 +02:00
 
 Треба пошукати, як автоматично робити пости до Diaspora. Принаймні, конвертувати нічого не треба.
 
+Upd: звісно ж, і для Diaspora* є [відповідне API][3].
+
 [1]: https://test.de.co.ua/2021/02/18/chromium-end.html
 [2]: https://www.livejournal.com/doc/server/ljp.csp.flat.postevent.html
+[3]: https://diaspora.github.io/api-documentation/routes/posts.html#publish-a-post
