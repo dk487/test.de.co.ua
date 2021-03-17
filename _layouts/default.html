@@ -7,13 +7,13 @@
     <title>{{ page.title | escape }}</title>
     <style>
       body { max-width: 50em; padding: 1em; margin: 0 auto }
-      h1 { border-bottom: medium solid }
-      footer { border-top: thin solid }
+{%- if content contains "<img" %}
       img { max-width: 100%; height: auto }
-      p, dt { margin: .75em 0 }
-      dd, li { margin: .75em 0 .75em 1.5em }
+{%- endif %}
+{%- if content contains "<table" %}
       table, th, td { border: thin solid; border-collapse: collapse }
       th, td { padding: .25em .5em }
+{%- endif %}
 {%- if content contains "<code>" %}
       .c, .cm, .cp, .c1 { color: #999; font-style: italic }
       .k, .o, .kc, .ow { font-weight: bold }
