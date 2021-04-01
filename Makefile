@@ -1,5 +1,7 @@
 ROOT := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
+-include .env
+
 ifeq ($(APP_ENV), test)
   JEKYLL := docker run --rm -v $(ROOT):/srv/jekyll jekyll/jekyll jekyll
   HTMLPROOFER := docker run --rm -v $(ROOT)_site:/_site 18fgsa/html-proofer
