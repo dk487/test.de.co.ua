@@ -24,8 +24,9 @@ test:
 		--check-sri \
 		--enforce_https
 
+slug ?= new-post
+SLUG ?= $(slug)
 post:
-	echo "---\ntitle: XXX\ndate: `date "+%F %X %:z"`\n---\n\n..." \
-		> _posts/`date +%Y/%F`-new-post.md
+	echo "---\ntitle: $(SLUG)\ndate: `date "+%F %X %:z"`\n---\n\n..." > _posts/`date +%Y/%F`-$(SLUG).md
 
 .PHONY: all build test post
