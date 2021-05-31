@@ -29,4 +29,8 @@ SLUG ?= $(slug)
 post:
 	echo "---\ntitle: $(SLUG)\ndate: `date "+%F %X %:z"`\n---\n\n..." > _posts/`date +%Y/%F`-$(SLUG).md
 
+.PHONY: geany
+geany:
+	git st --porcelain | grep _posts | cut -c 4- | xargs -L1 geany
+
 .PHONY: all build test post
