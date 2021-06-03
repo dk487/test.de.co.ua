@@ -1,6 +1,8 @@
 ---
 title: Тестовый сайт
 timezone: Europe/Kiev
+url: https://test.de.co.ua
+baseurl: ''
 collections:
   posts:
     title: Posts
