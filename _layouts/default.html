@@ -23,6 +23,13 @@
       .nv, .vg, .vc { color: #090 }
 {%- endif %}
     </style>
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+{%- if page.previous %}
+    <link rel="prev" href="{{ page.previous.url }}">
+{%- endif %}
+{%- if page.next %}
+    <link rel="next" href="{{ page.next.url }}">
+{%- endif %}
     <link rel="alternate" type="application/rss+xml" href="/rss.xml">
   </head>
   <body>
