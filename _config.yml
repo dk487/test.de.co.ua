@@ -1,8 +1,6 @@
 ---
 title: Тестовый сайт
 timezone: Europe/Kiev
-url: https://test.de.co.ua
-baseurl: ''
 collections:
   posts:
     title: Posts
@@ -20,6 +18,8 @@ defaults:
     type: posts
   values:
     layout: post
+url: https://test.de.co.ua
+baseurl: ''
 exclude:
 - README.md
 - CNAME
