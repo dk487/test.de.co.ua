@@ -35,8 +35,14 @@
     <footer>
       <p>
         © dk487
+{%- if page.previous %}
+        | <a href="{{ page.previous.url }}">&lt;&lt;&lt; Попередній пост</a>
+{%- endif %}
 {%- if page.url != "/" %}
         | <a href="/">На початок</a>
+{%- endif %}
+{%- if page.next %}
+        | <a href="{{ page.next.url }}">Наступний пост &gt;&gt;&gt;</a>
 {%- endif %}
         | <a href="/rss.xml" type="application/rss+xml">RSS</a>
         | <a href="https://github.com/dk487/test.de.co.ua">Github</a>
