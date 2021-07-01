@@ -15,4 +15,6 @@ date: 2021-07-01 19:07:40 +03:00
 
 Отака хуйня, малята.
 
+Twitter thread: <https://twitter.com/kastaneda/status/1410633161986486275>
+
 [1]: https://www.facebook.com/mt6561/posts/4301905139872664
