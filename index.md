@@ -17,4 +17,4 @@ title: Тестовий сайт
 {% endfor %}
 
 [1]: https://twitter.com/kastaneda
-[2]: /2021/07/01/why-test.html
+[2]: /2021/07/02/why-test.html
