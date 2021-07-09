@@ -2,7 +2,7 @@
 title: Тестовий сайт
 ---
 
-Всім привіт, я [@kastaneda][1], а це в мене такий тестовий сайт, щоб писати сюди всяку фігню.
+Всім привіт, я [@kastaneda][1], а це в мене такий [тестовий сайт][2], щоб писати сюди всяку фігню.
 
 {% assign prev_year = false %}
 {% for post in site.posts %}
@@ -17,3 +17,4 @@ title: Тестовий сайт
 {% endfor %}
 
 [1]: https://twitter.com/kastaneda
+[2]: /2021/07/01/why-test.html
