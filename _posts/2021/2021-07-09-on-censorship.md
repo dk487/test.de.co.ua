@@ -65,7 +65,7 @@ date: 2021-07-09 20:32:37 +03:00
 
 Але я заспокоївся і вирішив, що Інтернет досить міцний. А з часом буде в нас і Tor, і VPN. І це буде добре. _В якомусь сенсі._
 
-Cross-post: https://kastaneda.kiev.ua/2021/07/09/on-censorship.html
+Cross-post: <https://kastaneda.kiev.ua/2021/07/09/on-censorship.html>
 
 [1]: https://www.facebook.com/mt6561/posts/4321573754572469
 [2]: https://test.de.co.ua/2021/07/08/rnbo.html
