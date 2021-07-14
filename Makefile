@@ -22,7 +22,8 @@ test:
 		--check-html \
 		--check-opengraph \
 		--check-sri \
-		--enforce_https
+		--enforce_https \
+		--url-swap "https\:\/\/test\.de\.co\.ua:"
 
 slug ?= new-post
 SLUG ?= $(slug)
