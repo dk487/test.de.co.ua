@@ -1,5 +1,9 @@
+---
+lang: uk
+---
+
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: 'uk' }}">
+<html lang="{{ page.lang | default: layout.lang }}">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,20 +43,20 @@
 {{ content }}
 
     </main>
-    <footer{% if page.lang != "uk" %} lang="uk"{% endif %}>
+    <footer{% if page.lang %} lang="{{ layout.lang }}"{% endif %}>
       <p>
-        © dk487
+        <span aria-label="копірайт ді кей 487">© dk487</span>
 {%- if page.previous %}
-        | <a href="{{ page.previous.url }}">&lt;&lt;&lt; Попередній пост</a>
+        <span aria-hidden="true">|</span> <a href="{{ page.previous.url }}"><span aria-hidden="true">&lt;&lt;&lt;</span> Попередній пост</a>
 {%- endif %}
 {%- if page.url != "/" %}
-        | <a href="/">На початок</a>
+        <span aria-hidden="true">|</span> <a href="/">На початок</a>
 {%- endif %}
 {%- if page.next %}
-        | <a href="{{ page.next.url }}">Наступний пост &gt;&gt;&gt;</a>
+        <span aria-hidden="true">|</span> <a href="{{ page.next.url }}">Наступний пост <span aria-hidden="true">&gt;&gt;&gt;</span></a>
 {%- endif %}
-        | <a href="/rss.xml" type="application/rss+xml">RSS</a>
-        | <a href="https://github.com/dk487/test.de.co.ua">Github</a>
+        <span aria-hidden="true">|</span> <a href="/rss.xml" type="application/rss+xml">RSS</a>
+        <span aria-hidden="true">|</span> <a href="https://github.com/dk487/test.de.co.ua">Github</a>
       </p>
     </footer>
   </body>
