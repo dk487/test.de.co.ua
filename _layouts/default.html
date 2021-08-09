@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="{{ page.lang | default: 'uk' }}">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Тіпа, блоґ.">
-    <title>{{ page.title | escape }}</title>
+    <title>{{ page.title }}</title>
     <style>
       body { max-width: 50em; padding: 1em; margin: 0 auto }
+      [lang=ru] { color: maroon }
+      [lang=en] { color: navy }
 {%- if content contains "<img" %}
       img { max-width: 100%; height: auto }
 {%- endif %}
@@ -34,12 +36,12 @@
   </head>
   <body>
     <main>
-      <h1>{{ page.title | escape }}</h1>
+      <h1>{{ page.title }}</h1>
 
 {{ content }}
 
     </main>
-    <footer>
+    <footer{% if page.lang != "uk" %} lang="uk"{% endif %}>
       <p>
         © dk487
 {%- if page.previous %}
