@@ -1,5 +1,5 @@
 ---
-title: My localhost
+title: <span lang="en">My localhost</span>
 date: 2020-12-10 06:29:28 +02:00
 ---
 
