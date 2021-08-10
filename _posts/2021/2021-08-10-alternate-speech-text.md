@@ -18,4 +18,8 @@ date: 2021-08-10 15:12:19 +03:00
 
 Як це зробити правильно?
 
+P.S. [Тред у твітері.][2] [Тестовий код.][3]
+
 [1]: https://www.tpgi.com/short-note-on-aria-label-aria-labelledby-and-aria-describedby/
+[2]: https://twitter.com/kastaneda/status/1425078799318794244
+[3]: https://sandbox2020.de.co.ua/visual-aural.html
