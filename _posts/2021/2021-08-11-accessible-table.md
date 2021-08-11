@@ -10,33 +10,36 @@ date: 2021-08-11 12:44:34 +03:00
 І навіть та всра́та хоботня́ була в мільйон раз простіша, аніж зробити просту таблицю з простими даними _правильно_.
 
 <table>
-  <thead>
+  <caption>Статистика цього сайту</caption>
+  <thead style="position: sticky">
     <tr>
-      <th>Рік</th>
-      <th>Пости</th>
-      <th>Обсяг</th>
+      <th scope="col">Рік</th>
+      <th scope="col">Пости</th>
+      <th scope="col">Обсяг</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2017</th>
+      <th scope="row">2017</th>
       <td>6</td>
-      <td>3080</td>
+      <td>3 <abbr title="кібібайти">КіБ</abbr></td>
     </tr>
     <tr>
-      <th>2018</th>
+      <th scope="row">2018</th>
       <td>7</td>
-      <td>8930</td>
+      <td>8,9 <abbr title="кібібайт">КіБ</abbr></td>
     </tr>
     <tr>
-      <th>2020</th>
+      <th scope="row">2020</th>
       <td>36</td>
-      <td>42834</td>
+      <td>42,8 <abbr title="кібібайт">КіБ</abbr></td>
     </tr>
     <tr>
-      <th>2021</th>
+      <th scope="row">2021</th>
       <td>55</td>
-      <td>117921</td>
+      <td>117,9 <abbr title="кібібайт">КіБ</abbr></td>
     </tr>
   </tbody>
 </table>
+
+Я почав і тут же зупинився. Навіть не уявляю, куди копати далі.
