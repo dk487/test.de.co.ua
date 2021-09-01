@@ -1,10 +1,14 @@
+---
+lang: uk
+---
+
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="{{ page.lang | default: layout.lang }}">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Тіпа, блоґ.">
-    <title>{{ page.title | escape }}</title>
+    <title>{{ page.title }}</title>
     <style>
       body { max-width: 50em; padding: 1em; margin: 0 auto }
 {%- if content contains "<img" %}
@@ -14,7 +18,7 @@
       table, th, td { border: thin solid; border-collapse: collapse }
       th, td { padding: .25em .5em }
 {%- endif %}
-{%- if content contains "<code>" %}
+{%- if content contains "<code" %}
       .c, .cm, .cp, .c1 { color: #999; font-style: italic }
       .k, .o, .kc, .ow { font-weight: bold }
       .m, .mf, .mh, .mi, .mo { color: #099 }
@@ -34,25 +38,25 @@
   </head>
   <body>
     <main>
-      <h1>{{ page.title | escape }}</h1>
+      <h1>{{ page.title }}</h1>
 
 {{ content }}
 
     </main>
-    <footer>
+    <footer{% if page.lang %} lang="{{ layout.lang }}"{% endif %}>
       <p>
-        © dk487
+        <span>© dk487</span>
 {%- if page.previous %}
-        | <a href="{{ page.previous.url }}">&lt;&lt;&lt; Попередній пост</a>
+        <span aria-hidden="true">|</span> <a href="{{ page.previous.url }}"><span aria-hidden="true">&lt;&lt;&lt;</span> Попередній пост</a>
 {%- endif %}
 {%- if page.url != "/" %}
-        | <a href="/">На початок</a>
+        <span aria-hidden="true">|</span> <a href="/">На початок</a>
 {%- endif %}
 {%- if page.next %}
-        | <a href="{{ page.next.url }}">Наступний пост &gt;&gt;&gt;</a>
+        <span aria-hidden="true">|</span> <a href="{{ page.next.url }}">Наступний пост <span aria-hidden="true">&gt;&gt;&gt;</span></a>
 {%- endif %}
-        | <a href="/rss.xml" type="application/rss+xml">RSS</a>
-        | <a href="https://github.com/dk487/test.de.co.ua">Github</a>
+        <span aria-hidden="true">|</span> <a href="/rss.xml" type="application/rss+xml">RSS</a>
+        <span aria-hidden="true">|</span> <a href="https://github.com/dk487/test.de.co.ua">Github</a>
       </p>
     </footer>
   </body>

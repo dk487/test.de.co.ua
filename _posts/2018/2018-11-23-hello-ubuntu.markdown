@@ -1,6 +1,7 @@
 ---
-title: Hello, Ubuntu!
+title: <span lang="en">Hello, Ubuntu!</span>
 date: 2018-11-23 22:32:00 +02:00
+lang: ru
 ---
 
 Здравствуйте, все. Вернее, здравствуйте, никто. Вряд ли кто-то это читает.

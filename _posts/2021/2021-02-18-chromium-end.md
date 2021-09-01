@@ -9,7 +9,9 @@ date: 2021-02-18 07:07:00 +02:00
 
 Та, на жаль, Google вирішив вбити Chromium (або смертельно поранити, один хрін), [заборонивши для Chromium доступ до API синхронізації][2]:
 
+<div lang="en" markdown="1">
 > During a recent audit, we discovered that some third-party Chromium based browsers were able to integrate Google features, such as **Chrome sync** and Click to Call, that are only intended for Google’s use. This meant that a small fraction of users could sign into their Google Account and store their personal Chrome sync data, such as bookmarks, not just with Google Chrome, but also with some third-party Chromium based browsers. We are limiting access to our private Chrome APIs starting on **March 15, 2021**.
+</div>
 
 «Small fraction of users» — це, зокрема, я. Я не планую «вирішувати» цю проблему переходом на Chrome. Для мене є принципова різниця між F/OSS та всім іншим софтом. На моїх ноутбуках немає Chrome і, сподіваюся, ніколи не буде (окрім як десь у VM).
 

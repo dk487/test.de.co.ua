@@ -1,6 +1,7 @@
 ---
-title: RIP Twitter, Hello Siteleaf!
+title: <span lang="en">RIP Twitter, Hello Siteleaf!</span>
 date: 2020-07-21 03:34:00 +03:00
+lang: ru
 ---
 
 Знаете, что… Буду писать сюда _всякую хрень_, которую я раньше писал бы в твиттере. Вот.

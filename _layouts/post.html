@@ -2,6 +2,46 @@
 layout: default
 ---
 
-<p><em>{{ page.date | date: '%Y-%m-%d %H:%M' }}</em></p>
+<div itemscope itemtype="http://schema.org/BlogPosting">
+
+<p>
+  <em>
+    <time datetime="{{ page.date | date: '%Y-%m-%dT%H:%M:%S%:z' }}" itemprop="datePublished">
+{%- if page.lang %}
+      {{ page.date | date: '%Y-%m-%d %H:%M' }}
+{%- else %}
+      {% assign _w = page.date | date: '%u' -%}
+      {%- if _w == '1' %}Понеділок, {% endif -%}
+      {%- if _w == '2' %}Вівторок, {% endif -%}
+      {%- if _w == '3' %}Середа, {% endif -%}
+      {%- if _w == '4' %}Четвер, {% endif -%}
+      {%- if _w == '5' %}П'ятниця, {% endif -%}
+      {%- if _w == '6' %}Суббота, {% endif -%}
+      {%- if _w == '7' %}Неділя, {% endif -%}
+
+      {{ page.date | date: '%d' | remove_first: '0' }}
+
+      {%- assign _m = page.date | date: '%m' -%}
+      {%- if _m == '01' %} січня {% endif %}
+      {%- if _m == '02' %} лютого {% endif %}
+      {%- if _m == '03' %} березня {% endif %}
+      {%- if _m == '04' %} квітня {% endif %}
+      {%- if _m == '05' %} травня {% endif %}
+      {%- if _m == '06' %} червня {% endif %}
+      {%- if _m == '07' %} липня {% endif %}
+      {%- if _m == '08' %} серпня {% endif %}
+      {%- if _m == '09' %} вересня {% endif %}
+      {%- if _m == '10' %} жовтня {% endif %}
+      {%- if _m == '11' %} листопада {% endif %}
+      {%- if _m == '12' %} грудня {% endif %}
+
+      {{- page.date | date: '%Y' }} року,
+      {{- page.date | date: ' %H:%M' }}.
+{%- endif %}
+    </time>
+  </em>
+</p>
 
 {{ content }}
+
+</div>
