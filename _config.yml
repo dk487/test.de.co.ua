@@ -19,6 +19,7 @@ defaults:
   values:
     layout: post
 url: https://test.de.co.ua
+lol_url: https://lol.test.de.co.ua
 baseurl: ''
 exclude:
 - README.md
