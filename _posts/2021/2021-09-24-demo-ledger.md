@@ -103,7 +103,9 @@ date: 2021-09-24 19:02:15 +03:00
 
 Ну що? Хіба не круто? :) А про зведені таблиці напишу якось іншим разом.
 
+Коментарі пишіть [мені у твітер][4].
 
 [1]: /2020/08/19/new-ledger-explained.html
 [2]: /uploads/demo.ods
 [3]: https://wiki.documentfoundation.org/Documentation/Calc_Functions/SUBTOTAL#Arguments:
+[4]: https://twitter.com/kastaneda/status/1441477674246021122
