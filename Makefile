@@ -15,6 +15,9 @@ all: build test
 build:
 	$(JEKYLL) build
 
+dev:
+	$(JEKYLL) build --drafts --watch
+
 test:
 	$(HTMLPROOFER) ./_site \
 		--assume-extension \
