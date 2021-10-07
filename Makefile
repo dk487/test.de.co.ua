@@ -15,7 +15,7 @@ all: build test
 build:
 	$(JEKYLL) build
 
-dev:
+up:
 	$(JEKYLL) build --drafts --watch
 
 test:
@@ -30,11 +30,23 @@ test:
 
 slug ?= new-post
 SLUG ?= $(slug)
+POSTDATE = $(shell date "+%F %X %:z")
+FILEDATE = $(shell date "+%Y/%F")
 post:
-	echo "---\ntitle: $(SLUG)\ndate: `date "+%F %X %:z"`\n---\n\n..." > _posts/`date +%Y/%F`-$(SLUG).md
+	echo "---\ntitle: $(SLUG)\ndate: $(POSTDATE)\n---\n\n..." > _posts/$(FILEDATE)-$(SLUG).md
 
-.PHONY: geany
+draft:
+	echo "---\ntitle: $(SLUG)\nplaceholder: here\n---\n\n..." > _drafts/$(SLUG).md
+
+draft ?= $(shell find _drafts -type f | head -n 1)
+DRAFT ?= $(draft)
+DSLUG = $(patsubst _drafts/%.md,%,$(DRAFT))
+pub:
+	[ -f $(DRAFT) ]
+	mv $(DRAFT) _posts/$(FILEDATE)-$(DSLUG).md
+	sed -i "s/^placeholder: here/date: $(POSTDATE)/" _posts/$(FILEDATE)-$(DSLUG).md
+
 geany:
 	git st --porcelain | egrep '(_posts|_drafts)' | cut -c 4- | xargs -L1 geany
 
-.PHONY: all build test post
+.PHONY: all build up test post draft pub geany
