@@ -35,6 +35,6 @@ post:
 
 .PHONY: geany
 geany:
-	git st --porcelain | grep _posts | cut -c 4- | xargs -L1 geany
+	git st --porcelain | egrep '(_posts|_drafts)' | cut -c 4- | xargs -L1 geany
 
 .PHONY: all build test post
