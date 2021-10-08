@@ -12,8 +12,14 @@ endif
 
 all: build test
 
-build:
+build: favicon.ico
 	$(JEKYLL) build
+
+favicon.ico: icon/32.png
+	convert $< $@
+
+icon/32.png:
+	$(MAKE) -C icon all
 
 up:
 	$(JEKYLL) build --drafts --watch
