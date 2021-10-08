@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Host: test.de.co.ua
+Sitemap: https://test.de.co.ua/sitemap.xml
