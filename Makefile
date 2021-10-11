@@ -15,8 +15,10 @@ all: build test
 build: favicon.ico
 	$(JEKYLL) build
 
-favicon.ico: icon/32.png
-	convert $< $@
+favicon.ico: icon/32-pixart.png
+	convert $< favicon.gif
+	convert favicon.gif $@
+	rm favicon.gif
 
 icon/32.png:
 	$(MAKE) -C icon all
