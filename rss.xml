@@ -12,14 +12,16 @@ layout:
   <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
   <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
   <ttl>21600</ttl>
-{%  for _item in site.posts limit: 10 %}
+{%  assign _loc = '<a href="/' %}{%
+    for _item in site.posts limit: 10 %}{%
+      assign _abs = '<a href="' | append: site.url | append: site.baseurl | append: '/' %}
   <item>
     <title>{{ _item.title | xml_escape }}</title>
-    <description>{{ _item.excerpt | strip | replace: '<a href="/', '<a href="https://test.de.co.ua/' | xml_escape }}</description>
+    <description>{{ _item.excerpt | strip | replace: _loc, _abs | xml_escape }}</description>
     <link>{{ site.url }}{{ site.baseurl }}{{ _item.url }}</link>
     <guid>{{ site.url }}{{ site.baseurl }}{{ _item.url }}</guid>
     <pubDate>{{ _item.date | date_to_rfc822 }}</pubDate>
   </item>
-{%    endfor %}
+{%  endfor %}
 </channel>
 </rss>
