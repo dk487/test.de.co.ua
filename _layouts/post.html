@@ -19,7 +19,7 @@ layout: default
       {%- if _w == '6' %}Субота, {% endif -%}
       {%- if _w == '7' %}Неділя, {% endif -%}
 
-      {{ page.date | date: '%d' | remove_first: '0' }}
+      {{ page.date | date: '%e' }}
 
       {%- assign _m = page.date | date: '%m' -%}
       {%- if _m == '01' %} січня {% endif %}
