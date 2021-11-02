@@ -4,6 +4,8 @@ layout: default
 
 <div itemscope itemtype="http://schema.org/BlogPosting">
 
+<h1 itemprop="name headline">{{ page.title }}</h1>
+
 <p>
   <em>
     <time datetime="{{ page.date | date: '%Y-%m-%dT%H:%M:%S%:z' }}" itemprop="datePublished">
@@ -42,6 +44,8 @@ layout: default
   </em>
 </p>
 
+<div itemprop="articleBody">
 {{ content }}
+</div>
 
 </div>
