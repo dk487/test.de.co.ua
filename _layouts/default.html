@@ -40,12 +40,11 @@ lang: uk
   </head>
   <body>
     <main>
-      <h1>{{ page.title }}</h1>
 
 {{ content }}
 
     </main>
-    <footer{% if page.lang %} lang="{{ layout.lang }}"{% endif %}>
+    <footer {%- if page.lang %} lang="{{ layout.lang }}"{% endif %}>
       <p>
         <span>© dk487</span>
 {%- if page.previous %}
