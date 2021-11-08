@@ -49,6 +49,8 @@ date: 2021-11-08 02:54:44 +02:00
 ```Makefile
 favicon.ico: favicon.svg
         rsvg-convert $< -w 32 -h 32 | convert - $@
+        # Або так:
+        #rsvg-convert $< -w 32 -h 32 | convert - gif:- | convert - $@
 
 apple-touch-icon.png: favicon.svg
         rsvg-convert $< -w 180 -h 180 \
