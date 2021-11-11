@@ -3,7 +3,7 @@ title: Шо за лажа з цим Siteleaf?
 date: 2021-08-19 04:14 +0300
 ---
 
-Захотів написати пост, зайшов у Siteleaf, а він мені і каже: 
+Захотів написати пост, зайшов у Siteleaf, а він мені і каже:
 
 <div lang="en" markdown="1">
 >  Page limit reached

@@ -21,12 +21,12 @@ Upd.#2: спробую скласти мій _персональний хіт-п
 
 <div lang="en" markdown="1">
 
- Feature          | Atom                | VSCode     | Wins 
+ Feature          | Atom                | VSCode     | Wins
 ------------------|---------------------|------------|------
- Markdown style   | No bold/italic      | Nice look  | Code 
- MD preview       | `Ctrl-Stift-M`      | Button     | Code 
- Projects/folders | «Add folder to…»    | Workspace? | Atom 
- Git commit       | Bottom right icon   | Left bar   | Code 
+ Markdown style   | No bold/italic      | Nice look  | Code
+ MD preview       | `Ctrl-Stift-M`      | Button     | Code
+ Projects/folders | «Add folder to…»    | Workspace? | Atom
+ Git commit       | Bottom right icon   | Left bar   | Code
 
 </div>
 

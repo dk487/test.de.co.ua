@@ -10,14 +10,14 @@ lang: ru
 
 [![screen_01-08-45.png](/uploads/screen_01-08-45.png)](/uploads/screen_01-08-45.png)
 
-> The router cannot connect to ASUS server to check for the firmware update. After reconnecting to the Internet, go back to this page and click Check to check for the latest firmware updates. 
+> The router cannot connect to ASUS server to check for the firmware update. After reconnecting to the Internet, go back to this page and click Check to check for the latest firmware updates.
 
 Ух ты. Подозрительная хуйня.
 
 Наверное, надо проверить руками. Иду на [сайт][1] [производителя][2], ищу прошивки. Нахожу новую версию. [Качаю][3]. Машинально проверяю MD5.
 
 ```
-gray@carmilhan:~/inbox$ md5sum FW_RT_AC58U_300438252243.zip 
+gray@carmilhan:~/inbox$ md5sum FW_RT_AC58U_300438252243.zip
 8aa3563d6985b0b0e0f91961e26c8ecf  FW_RT_AC58U_300438252243.zip
 ```
 
