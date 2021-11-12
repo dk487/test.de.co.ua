@@ -15,4 +15,19 @@ do
 done
 ```
 
+Джерело натхнення і додаткових подробиць:
+
+<div lang="en" markdown=1>
+ - [How to list all text (non-binary) files in a git repository?][1]
+ - [How to remove trailing whitespaces with sed?][2]
+ - [How to add a newline to the end of a file?][3]
+</div>
+
+Також дякую пану [@diggya][4].
+
+[1]: https://stackoverflow.com/a/24350112
+[2]: https://stackoverflow.com/a/4438318
+[3]: https://unix.stackexchange.com/a/263965
+[4]: https://twitter.com/diggya/
+
 Обговорення у Twitter: <https://twitter.com/kastaneda/status/1458782553989685251>
