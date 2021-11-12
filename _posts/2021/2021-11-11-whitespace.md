@@ -10,7 +10,7 @@ date: 2021-11-11 14:54:27 +02:00
 ```sh
 for file in $(git grep --cached -Il '')
 do
-  sed -i 's/[ \t]*$//' $file
+  sed -i 's/\s*$//' $file
   [ -n "$(tail -c1 $file)" ] && echo "" >> $file
 done
 ```
