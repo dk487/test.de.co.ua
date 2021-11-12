@@ -62,3 +62,5 @@ apple-touch-icon.png: favicon.svg
 
 [1]: /2021/10/08/icons.html
 [2]: https://css-tricks.com/favicons-how-to-make-sure-browsers-only-download-the-svg-version/
+
+Обговорення у Twitter: <https://twitter.com/kastaneda/status/1457513127969492997>

@@ -14,3 +14,5 @@ do
   [ -n "$(tail -c1 $file)" ] && echo "" >> $file
 done
 ```
+
+Обговорення у Twitter: <https://twitter.com/kastaneda/status/1458782553989685251>
