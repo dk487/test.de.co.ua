@@ -15,7 +15,7 @@ do
 done
 ```
 
-Джерело натхнення і додаткових подробиць:
+Джерело натхнення і додаткові подробиці:
 
 <div lang="en" markdown=1>
  - [How to list all text (non-binary) files in a git repository?][1]
