@@ -2,6 +2,8 @@
 title: Рівноприскорений рух
 date: 2021-11-15 18:17:06 +02:00
 styles: |
+  .formula { font-size: 135%; text-align: center }
+
   .z {
     display: block; margin: .15em; width: 1em; height: 1em;
     border: thin solid #363; border-radius: 50%;
@@ -9,10 +11,15 @@ styles: |
   }
 
   @media (min-width: 30em) {
-    .container {
-      display: grid;
-      grid-template-columns: minmax(10em, auto) 2em 15em;
-      gap: 1em;
+    @supports not (display: grid) {
+      .container { display: flex }
+      .demo { margin: 0 1em }
+    }
+    @supports (display: grid) {
+      .container {
+        display: grid; gap: 1em;
+        grid-template-columns: minmax(10em, auto) 2em 15em;
+      }
     }
   }
 
