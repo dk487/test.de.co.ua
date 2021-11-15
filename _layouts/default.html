@@ -29,6 +29,10 @@ lang: uk
       .sc, .se, .sr { color: #609 }
       .nv, .vg, .vc { color: #090 }
 {%- endif %}
+{%- if page.styles %}
+
+{{ page.styles }}
+{%- endif %}
     </style>
     <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 {%- if page.previous %}
