@@ -1,0 +1,18 @@
+version: 2.1
+
+workflows:
+  default-workflow:
+    jobs:
+      - jekyll-build
+
+jobs:
+  jekyll-build:
+    docker:
+      - image: jekyll/minimal
+    working_directory: /srv/jekyll
+    steps:
+      - checkout
+      - run:
+          name: "Build the site"
+          command: "jekyll build"
+
