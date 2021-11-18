@@ -13,5 +13,5 @@ jobs:
       - checkout
       - run:
           name: "Build the site"
-          command: "pwd; ls; cd ~/project; pwd; ls; jekyll build"
+          command: "cd ~/project; ls -l; whoami; jekyll build"
 
