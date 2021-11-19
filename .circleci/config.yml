@@ -19,7 +19,7 @@ jobs:
 
   html-proofer:
     docker:
-      - klakegg/html-proofer
+      - image: klakegg/html-proofer
     working_directory: /src
     steps:
       - run:
