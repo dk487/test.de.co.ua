@@ -4,7 +4,7 @@ ROOT := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 ifeq ($(APP_ENV), test)
   JEKYLL := docker run --rm -v $(ROOT):/srv/jekyll jekyll/jekyll jekyll
-  HTMLPROOFER := docker run --rm -v $(ROOT)_site:/src/_site klakegg/html-proofer
+  HTMLPROOFER := docker run --rm -v $(ROOT):/src klakegg/html-proofer
 else
   JEKYLL := jekyll
   HTMLPROOFER := htmlproofer
@@ -29,12 +29,20 @@ up:
 test:
 	$(HTMLPROOFER) ./_site \
 		--assume-extension \
-		--http-status-ignore "0,400" \
+		--internal-domains https://test.de.co.ua \
 		--check-html \
+		--report-missing-names \
+		--check-favicon \
 		--check-opengraph \
-		--check-sri \
+		--disable-external \
 		--enforce_https \
-		--url-swap "https\:\/\/test\.de\.co\.ua:"
+		--only-4xx
+
+#		--report-invalid-tags \
+#		--report-missing-doctype \
+#		--report-eof-tags \
+#		--report-mismatched-tags \
+#		--check-sri \
 
 slug ?= new-post
 SLUG ?= $(slug)

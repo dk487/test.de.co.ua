@@ -8,10 +8,25 @@ workflows:
 jobs:
   jekyll-build:
     docker:
-      - image: jekyll/minimal
+      - image: kastaneda/jekyll-ci
     working_directory: /srv/jekyll
     steps:
       - checkout
       - run:
           name: "Build the site"
           command: "jekyll build"
+      - run:
+          name: "Run HTML-Proofer"
+          command: |
+            htmlproofer /srv/jekyll/_site \
+              --disable-external \
+              --internal-domains https://test.de.co.ua \
+              --check-html \
+              --check-favicon \
+              --check-opengraph \
+              --report-invalid-tags \
+              --report-missing-names \
+              --report-missing-doctype \
+              --report-eof-tags \
+              --report-mismatched-tags
+
