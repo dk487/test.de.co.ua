@@ -3,8 +3,9 @@ version: 2.1
 workflows:
   default-workflow:
     jobs:
-      - jekyll-build
-      - html-proofer
+      steps:
+        - jekyll-build
+        - html-proofer
 
 jobs:
   jekyll-build:
@@ -25,7 +26,7 @@ jobs:
       - run:
           name: "Run HTML-Proofer"
           command: |
-            . \
+            html-proofer _site/ \
               --assume-extension \
               --internal-domains https://test.de.co.ua \
               --check-html \
