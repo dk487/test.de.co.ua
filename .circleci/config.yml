@@ -4,6 +4,7 @@ workflows:
   default-workflow:
     jobs:
       - jekyll-build
+      - html-proofer
 
 jobs:
   jekyll-build:
@@ -16,3 +17,25 @@ jobs:
           name: "Build the site"
           command: "jekyll build"
 
+  html-proofer:
+    docker:
+      - klakegg/html-proofer
+    working_directory: /src
+    steps:
+      - run:
+          name: "Run HTML-Proofer"
+          command: |
+            . \
+              --assume-extension \
+              --internal-domains https://test.de.co.ua \
+              --check-html \
+              --report-invalid-tags \
+              --report-missing-names \
+              --report-missing-doctype \
+              --report-eof-tags \
+              --report-mismatched-tags \
+              --check-favicon \
+              --check-opengraph \
+              --disable-external \
+              --enforce_https \
+              --only-4xx
