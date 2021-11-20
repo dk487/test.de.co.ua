@@ -28,13 +28,20 @@ up:
 
 test:
 	$(HTMLPROOFER) ./_site \
-		--assume-extension \
+		--disable-external \
 		--internal-domains https://test.de.co.ua \
 		--check-html \
-		--report-missing-names \
 		--check-favicon \
 		--check-opengraph \
-		--disable-external \
+		--report-missing-names
+
+test-full:
+	$(HTMLPROOFER) ./_site \
+		--internal-domains https://test.de.co.ua \
+		--check-html \
+		--check-favicon \
+		--check-opengraph \
+		--report-missing-names \
 		--enforce_https \
 		--only-4xx
 
