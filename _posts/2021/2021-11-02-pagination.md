@@ -1,5 +1,6 @@
 ---
-title: <span lang="en">Pagination</span>
+title: Pagination
+title_lang: en
 date: 2021-11-02 12:53:00 +02:00
 ---
 

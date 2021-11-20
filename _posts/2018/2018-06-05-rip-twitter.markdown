@@ -1,5 +1,6 @@
 ---
-title: <span lang="en">RIP Twitter</span>
+title: RIP Twitter
+title_lang: en
 date: 2018-06-05 18:58:00 +03:00
 lang: ru
 ---

@@ -1,5 +1,6 @@
 ---
-title: <span lang="en">Hello, Ubuntu!</span>
+title: Hello, Ubuntu!
+title_lang: en
 date: 2018-11-23 22:32:00 +02:00
 lang: ru
 ---

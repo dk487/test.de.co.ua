@@ -1,5 +1,6 @@
 ---
-title: <span lang="en">Hello, VSCode!</span>
+title: Hello, VSCode!
+title_lang: en
 date: 2020-08-14 05:13:00 +03:00
 ---
 

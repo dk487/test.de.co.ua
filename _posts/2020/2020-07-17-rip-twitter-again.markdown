@@ -1,5 +1,6 @@
 ---
-title: <span lang="en">RIP Twitter. AGAIN!</span>
+title: RIP Twitter. AGAIN!
+title_lang: en
 date: 2020-07-17 03:39:00 +03:00
 lang: ru
 ---

@@ -8,7 +8,9 @@ lang: uk
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
-    <title>{{ page.title | strip_html }}</title>
+    <title
+{%- if page.title_lang %} lang="{{ page.title_lang }}"
+{%- endif %}>{{ page.title | escape }}</title>
     <style>
       body { max-width: 50em; padding: 1em; margin: 0 auto }
 {%- if content contains "<img" %}

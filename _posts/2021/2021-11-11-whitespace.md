@@ -1,5 +1,5 @@
 ---
-title: Контроль над <span lang="en">white-space</span>
+title: Контроль над white-space
 date: 2021-11-11 14:54:27 +02:00
 ---
 
