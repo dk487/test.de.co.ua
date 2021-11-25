@@ -2,13 +2,13 @@ ROOT := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 -include .env
 
-ifeq ($(APP_ENV), test)
-  JEKYLL := docker run --rm -v $(ROOT):/srv/jekyll jekyll/jekyll jekyll
-  HTMLPROOFER := docker run --rm -v $(ROOT):/src klakegg/html-proofer
-else
-  JEKYLL := jekyll
-  HTMLPROOFER := htmlproofer
-endif
+JEKYLL ?= jekyll
+HTMLPROOFER ?= htmlproofer
+
+# To run dockerized version of build tools, '.env' file should be like:
+#
+# JEKYLL = docker run --rm -v $(ROOT):/srv/jekyll jekyll/jekyll jekyll
+# HTMLPROOFER = docker run --rm -v $(ROOT):/src klakegg/html-proofer
 
 all: build test
 
