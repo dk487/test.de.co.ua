@@ -10,17 +10,23 @@ HTMLPROOFER ?= htmlproofer
 # JEKYLL = docker run --rm -v $(ROOT):/srv/jekyll jekyll/jekyll jekyll
 # HTMLPROOFER = docker run --rm -v $(ROOT):/src klakegg/html-proofer
 
+ASSETS := favicon.ico apple-touch-icon.png
+
 all: build test
 
-build: favicon.ico
+build: $(ASSETS)
 	$(JEKYLL) build
 
-favicon.ico: icon/32-pixart.png
-	convert $< favicon.gif
-	convert favicon.gif $@
-	rm favicon.gif
+favicon.ico: icon/16-pixart.png icon/32-pixart.png
+	convert icon/16-pixart.png favicon16.gif
+	convert icon/32-pixart.png favicon32.gif
+	convert favicon16.gif favicon32.gif $@
+	rm favicon16.gif favicon32.gif
 
-icon/32.png:
+apple-touch-icon.png: icon/180.png
+	cp $< $@
+
+icon/%:
 	$(MAKE) -C icon all
 
 up:
