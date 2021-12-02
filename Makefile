@@ -23,7 +23,7 @@ favicon.ico: icon/16-pixart.png icon/32-pixart.png
 	convert favicon16.gif favicon32.gif $@
 	rm favicon16.gif favicon32.gif
 
-apple-touch-icon.png: icon/180.png
+apple-touch-icon.png: icon/180w.png
 	cp $< $@
 
 icon/%:
