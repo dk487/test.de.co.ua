@@ -9,7 +9,7 @@ date: +2021-11-16 02:17:14 +0200
 
 Я це зроблю.
 
-[![Знімок екрану](/uploads/screen_02-17-05.png)](/uploads/screen_02-17-05.png)
+[![Знімок екрану з прототипом інтерфейсу](/uploads/screen_02-17-05.png)](/uploads/screen_02-17-05.png)
 
 [1]: /2017/10/16/biesit-translit.html
 [2]: https://zakon.rada.gov.ua/laws/show/55-2010-%D0%BF
