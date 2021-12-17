@@ -1,7 +1,12 @@
 ---
+url: https://test.de.co.ua
+baseurl: ''
+
 title: Тестовий сайт
 description: Тіпа, блоґ.
+copyright: © dk487
 timezone: Europe/Kiev
+
 collections:
   posts:
     title: Posts
@@ -9,6 +14,7 @@ collections:
   uploads:
     title: Uploads
     output: true
+
 defaults:
 - scope:
     path: ''
@@ -19,8 +25,7 @@ defaults:
     type: posts
   values:
     layout: post
-url: https://test.de.co.ua
-baseurl: ''
+
 exclude:
 - README.md
 - CNAME

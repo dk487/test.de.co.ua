@@ -55,7 +55,7 @@ lang: uk
     </main>
     <footer {%- if page.lang %} lang="{{ layout.lang }}"{% endif %}>
       <p>
-        <span>© dk487</span>
+        <span>{{ site.copyright }}</span>
 {%- if page.previous %}
         <span aria-hidden="true">|</span> <a href="{{ page.previous.url }}"><span aria-hidden="true">&lt;&lt;&lt;</span> Попередній пост</a>
 {%- endif %}
