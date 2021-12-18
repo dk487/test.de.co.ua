@@ -2,8 +2,10 @@
 title: My localhost
 title_lang: en
 date: 2020-12-10 06:29:28 +02:00
+excerpt_separator: <!--more-->
 ---
 
+<!--more-->
 ```php
 $vhosts = array_map('basename', glob('/var/www/vhosts/[a-z]*'));
 
