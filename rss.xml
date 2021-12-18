@@ -2,26 +2,27 @@
 layout:
 ---
 
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-  <title>{{ site.title }}</title>
-  <description>{{ site.description }}</description>
-  <link>{{ site.url }}{{ site.baseurl }}</link>
-  <atom:link href="{{ site.url }}{{ site.baseurl }}/rss.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-  <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-  <ttl>21600</ttl>
+  <channel>
+    <title>{{ site.title }}</title>
+    <description>{{ site.description }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}</link>
+    <copyright>{{ site.copyright }}</copyright>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <ttl>21600</ttl>
 {%  assign _loc = '<a href="/' %}{%
     for _item in site.posts limit: 10 %}{%
       assign _abs = '<a href="' | append: site.url | append: site.baseurl | append: '/' %}
-  <item>
-    <title>{{ _item.title | xml_escape }}</title>
-    <description>{{ _item.excerpt | strip | replace: _loc, _abs | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}{{ _item.url }}</link>
-    <guid>{{ site.url }}{{ site.baseurl }}{{ _item.url }}</guid>
-    <pubDate>{{ _item.date | date_to_rfc822 }}</pubDate>
-  </item>
+    <item>
+      <title>{{ _item.title | xml_escape }}</title>
+      <description>{{ _item.excerpt | strip | replace: _loc, _abs | xml_escape }}</description>
+      <link>{{ site.url }}{{ site.baseurl }}{{ _item.url }}</link>
+      <guid>{{ site.url }}{{ site.baseurl }}{{ _item.url }}</guid>
+      <pubDate>{{ _item.date | date_to_rfc822 }}</pubDate>
+    </item>
 {%  endfor %}
 </channel>
 </rss>
