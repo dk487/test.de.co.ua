@@ -39,9 +39,6 @@
                     <xsl:value-of select="title"/>
                   </a>
                 </p>
-                <div class="entry-text">
-                  <xsl:value-of select="description" disable-output-escaping="yes"/>
-                </div>
               </li>
             </xsl:for-each>
           </ul>
@@ -49,12 +46,6 @@
         <footer>
           <copyright><xsl:value-of select="/rss/channel/copyright"/></copyright>
         </footer>
-        <script>
-          // Damn.
-          document.querySelectorAll('.entry-text').forEach(function (a) {
-            a.innerHTML = a.innerText;
-          });
-        </script>
       </body>
     </html>
   </xsl:template>
