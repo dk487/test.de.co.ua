@@ -4,7 +4,7 @@ date: 2022-02-18 17:54:21 +02:00
 styles: |
   @media (max-width: 25em) {
     table, tr, td { display: block; border: none }
-    th, td:nth-child(1), td:empty, td:-moz-only-whitespace { display: none }
+    th, td:nth-child(1), td:empty, td:-moz-only-whitespace, td.x { display: none }
     td:nth-child(2) { text-decoration: line-through; text-decoration-color: #f008 }
     td:nth-child(3), td:nth-child(4) { margin-left: 2em }
     td:nth-child(3):before, td:nth-child(4):before { content: '✅ ' }
@@ -20,6 +20,8 @@ styles: |
 Тож я зроблю тут собі копію, щоб зручніше користуватися (і щоб не зникло). Мій варіант теж не дуже зручно читати зі смартфона. Може, потім щось краще придумаю.
 
 * * *
+
+{% capture the_glossary %}
 
 ## Глосарій
 
@@ -126,6 +128,9 @@ styles: |
 61 | Придністровська Молдавська Республіка | Придністровський регіон Молдови<br>Лівобережжя Молдови | Тираспольська адміністрація<br>Придністровський регіон Молдови, що перебуває під контролем Росії
 62 | Республіка Абхазія | Окупована Росією грузинська територія, Абхазія
 63 | Південна Осетія | Окупована Росією територія у Цхінвальському регіоні Грузії
+
+{% endcapture %}
+{{ the_glossary | replace: "<td> </td>", "<td class=x></td>" }}
 
 [1]: https://www.rnbo.gov.ua/files/2021/%D0%93%D0%9B%D0%9E%D0%A1%D0%90%D0%A0%D0%86%D0%99.pdf
 [2]: https://twitter.com/gbodya/status/1450765647470899202
