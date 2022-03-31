@@ -37,9 +37,15 @@ date: 2022-03-31 13:00:19 +03:00
  - [Лівий берег][3]
  - [ZN,UA][4]
  - [Delo.ua][5]
+ - [LIGA.net][6]
+ - [Інтерфакс][7]
+ - [Суспільне][8]
 
 [1]: https://www.epravda.com.ua/news/2022/03/31/684985/
 [2]: https://t.me/dsszzi_official/2736
 [3]: https://lb.ua/society/2022/03/31/511718_kiivskogo_internetprovaydera.html
 [4]: https://zn.ua/ukr/UKRAINE/internet-provajderiv-jaki-vidmovljajutsja-blokuvati-propahandu-rf-pochali-vikljuchati-z-rejestru-derzhspetszvjazku.html
 [5]: https://delo.ua/uk/telecom/ne-blokuvali-vorozi-domeni-dvox-internet-provaideriv-viklyucili-iz-derzrejestru-ukrayini-394994/
+[6]: https://biz.liga.net/ua/all/telekom/novosti/kievskogo-provaydera-nakazali-za-otkaz-blokirovat-russkie-sayty
+[7]: https://ua.interfax.com.ua/news/telecom/819679.html
+[8]: https://suspilne.media/223576-provajderiv-aki-vidmovlautsa-blokuvati-rosijsku-propagandu-poperedili-pro-sankcii/
