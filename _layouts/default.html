@@ -10,7 +10,8 @@ lang: uk
     <meta name="description" content="{{ site.description }}">
     <title
 {%- if page.title_lang %} lang="{{ page.title_lang }}"
-{%- endif %}>{{ page.title | escape }}</title>
+{%- endif %}>{%- if page.draft -%}[DRAFT] {% endif -%}
+{{ page.title | escape }}</title>
     <style>
       body { max-width: 50em; padding: 1em; margin: 0 auto }
 {%- if content contains "<img" %}

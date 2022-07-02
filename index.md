@@ -15,7 +15,7 @@ title: Тестовий сайт
 ## {{ post_year }}
 
 {% endif %}
-- [{{ post.date | date: "%Y-%m-%d" }}: {{ post.title }}]({{ post.url }})
+- [{% if post.draft %}[DRAFT]{% else %}{{ post.date | date: "%Y-%m-%d" }}:{% endif %} {{ post.title }}]({{ post.url }})
 
   {{ post.excerpt }}
 {% assign prev_year = post_year %}
