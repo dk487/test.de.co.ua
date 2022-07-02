@@ -1,5 +1,5 @@
 ---
-title: HashKnownHosts
+title: SSH HashKnownHosts
 title_lang: en
 placeholder: here
 ---

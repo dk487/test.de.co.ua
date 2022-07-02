@@ -1,5 +1,5 @@
 ---
-title: SSH Tips and tricks
+title: Всяка всячина про SSH
 title_lang: en
 placeholder: here
 ---
