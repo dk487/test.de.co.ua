@@ -86,8 +86,19 @@ date: 2022-07-05 13:44:45 +03:00
 
 Все, з мене досить, у мене дах їде з цих трьох взаємозаперечуючих заяв.
 
+* * *
+
+На танцпол увірвався [Верховний Головнокомандувач][6].
+
+> Президент Володимир Зеленський вимагає роз'яснення від Генерального штабу щодо порядку отримання якихось дозволів для військовозобовʼязаних, призовників і резервістів.
+>
+> Джерело: вечірнє звернення глави держави 5 липня
+>
+> Пряма мова: "Доручив міністру оборони, начальнику Генштабу і головнокомандувачу ЗСУ завтра доповісти мені всі деталі стосовно рішення про затвердження порядку отримання якихось дозволів для військовозобовʼязаних, призовників і резервістів … Прошу Генеральний штаб надалі не ухвалювати без мене подібних рішень".
+
 [1]: https://mobile.twitter.com/GeneralStaffUA/status/1544264520125874176
 [2]: https://www.facebook.com/GeneralStaff.ua/posts/pfbid01JmyQZA6vBJi4DqCJXRMAF1MV5BCmrKKqeK1w1YLpdVQxKtVAggNfDaTC3DNVVfTl
 [3]: https://www.facebook.com/GeneralStaff.ua/posts/pfbid036cXbDECgCXFPTUDXT5JiFv1FGNsBJ3pG6trPAjwJeyMBPZ9o8SQZafJqfLQ3wzQ6l
 [4]: https://www.facebook.com/CinCAFU
 [5]: https://www.facebook.com/GeneralStaff.ua/posts/pfbid02ya5jXFVa6aG2BwEGdSpDfyCZKRTGx9LNh7wjkEp9DadvyTg1coFH7XL2pCcWW35Jl
+[6]: https://www.pravda.com.ua/news/2022/07/5/7356530/
