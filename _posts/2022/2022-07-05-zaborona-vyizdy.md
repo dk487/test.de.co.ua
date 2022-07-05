@@ -33,5 +33,26 @@ date: 2022-07-05 13:44:45 +03:00
 
 Ох, друзі, що ж це коїться.
 
+* * *
+
+Оновлення: в ситуацію [втрутився особисто Залужний][3].
+
+> [Головнокомандувач ЗС України / CinC AF of Ukraine][4] генерал Валерій Залужний:
+>
+> Шановні громадяни - призовники та військовозобов’язані! 
+>
+> Нагадую, триває війна. Ви потрібні своїй державі! 
+>
+> Всі, хто досі не стоїть чи не поновився на військовому обліку, мають це зробити. Ті з вас, хто планує виїзд за межі своїх районів та областей, мають взяти дозвіл у ТЦК. 
+>
+> *Жодних вказівок на перешкоджання переміщенню осіб упродовж найближчих днів з боку військового командування не надавалося.*
+>
+> Порядок надання дозволу за посиланням:
+> <https://www.zsu.gov.ua/new_page/62c430664909af0013650084>
+
+Ну й добре.
+
 [1]: https://mobile.twitter.com/GeneralStaffUA/status/1544264520125874176
 [2]: https://www.facebook.com/GeneralStaff.ua/posts/pfbid01JmyQZA6vBJi4DqCJXRMAF1MV5BCmrKKqeK1w1YLpdVQxKtVAggNfDaTC3DNVVfTl
+[3]: https://www.facebook.com/GeneralStaff.ua/posts/pfbid036cXbDECgCXFPTUDXT5JiFv1FGNsBJ3pG6trPAjwJeyMBPZ9o8SQZafJqfLQ3wzQ6l
+[4]: https://www.facebook.com/CinCAFU
