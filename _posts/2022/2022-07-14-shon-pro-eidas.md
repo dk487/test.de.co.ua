@@ -16,4 +16,7 @@ date: 2022-07-14 22:56:21 +03:00
 > <https://t.me/ruheight/1224>
 </div>
 
+Мій [міні-тред][2] у Твітер.
+
 [1]: https://www.facebook.com/ruheight/posts/pfbid0zudPSRa2azBXjyVq6RoaHFWhT52xEerC16VWZpa6cGDwpbbt8XbWS3bd5xd5rpQel
+[2]: https://twitter.com/kastaneda/status/1546992906841595904
