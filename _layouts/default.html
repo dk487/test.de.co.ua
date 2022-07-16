@@ -24,7 +24,8 @@ lang: uk
       table, th, td { border: thin solid; border-collapse: collapse }
       th, td { padding: .25em .5em; vertical-align: top }
 {%- endif %}
-{%- if content contains "<code" %}
+{%- assign content_test_code = content | replace: '<code class="language-plaintext', "XXX" %}
+{%- if content_test_code contains "<code" %}
       .c, .cm, .cp, .c1 { color: #999; font-style: italic }
       .k, .o, .kc, .ow { font-weight: bold }
       .m, .mf, .mh, .mi, .mo { color: #099 }
