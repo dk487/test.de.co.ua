@@ -47,8 +47,8 @@ lang: uk
     <link rel="alternate" type="application/rss+xml" href="/rss.xml">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="application-name" content="{{ page.title | escape }}">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/opengraph.png">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="{{ site.http_url }}{{ site.baseurl }}/opengraph.png">
 {%- if page.layout == "post" %}
     <meta property="og:type" content="article">
     <meta property="og:description" content="{{ page.excerpt | strip_html | replace: "
