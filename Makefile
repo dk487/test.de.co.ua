@@ -10,7 +10,7 @@ HTMLPROOFER ?= htmlproofer
 # JEKYLL = docker run --rm -v $(ROOT):/srv/jekyll jekyll/jekyll jekyll
 # HTMLPROOFER = docker run --rm -v $(ROOT):/src klakegg/html-proofer
 
-ASSETS := favicon.ico apple-touch-icon.png
+ASSETS := favicon.ico apple-touch-icon.png opengraph.png
 
 all: build test
 
@@ -25,6 +25,11 @@ favicon.ico: _icon/16-pixart.png _icon/32-pixart.png
 
 apple-touch-icon.png: favicon.svg
 	rsvg-convert $< -w 180 -h 180 | convert - -background white -alpha remove -alpha off $@
+	optipng $@
+	advpng -z4 $@
+
+%.png: %.svg
+	rsvg-convert $< -o $@
 	optipng $@
 	advpng -z4 $@
 
