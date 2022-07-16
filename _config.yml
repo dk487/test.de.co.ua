@@ -14,6 +14,9 @@ collections:
   uploads:
     title: Uploads
     output: true
+  og:
+    title: OpenGraphSplash
+    output: true
 
 defaults:
 - scope:
@@ -25,6 +28,12 @@ defaults:
     type: posts
   values:
     layout: post
+- scope:
+    path: ''
+    type: og
+  values:
+    layout: og_svg
+    permalink: /og/:year/:month/:day/:title.svg
 
 exclude:
 - README.md
