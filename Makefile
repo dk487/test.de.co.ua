@@ -17,17 +17,16 @@ all: build test
 build: $(ASSETS)
 	$(JEKYLL) build
 
-favicon.ico: icon/16-pixart.png icon/32-pixart.png
-	convert icon/16-pixart.png favicon16.gif
-	convert icon/32-pixart.png favicon32.gif
-	convert favicon16.gif favicon32.gif $@
-	rm favicon16.gif favicon32.gif
+favicon.ico: _icon/16-pixart.png _icon/32-pixart.png
+	convert _icon/16-pixart.png tmp_favicon16.gif
+	convert _icon/32-pixart.png tmp_favicon32.gif
+	convert tmp_favicon16.gif tmp_favicon32.gif $@
+	rm tmp_favicon16.gif tmp_favicon32.gif
 
-apple-touch-icon.png: icon/180w.png
-	cp $< $@
-
-icon/%:
-	$(MAKE) -C icon all
+apple-touch-icon.png: favicon.svg
+	rsvg-convert $< -w 180 -h 180 | convert - -background white -alpha remove -alpha off $@
+	optipng $@
+	advpng -z4 $@
 
 up:
 	$(JEKYLL) build --drafts --watch
