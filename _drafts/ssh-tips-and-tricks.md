@@ -4,5 +4,5 @@ title_lang: en
 placeholder: here
 ---
 
-Збиратиму тут свої пости про SSH.
+Збира́тиму тут свої пости про SSH.
 
