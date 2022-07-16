@@ -47,15 +47,14 @@ lang: uk
     <link rel="alternate" type="application/rss+xml" href="/rss.xml">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="application-name" content="{{ page.title | escape }}">
-    <!-- meta name="twitter:card" content="summary_large_image" -->
+    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/apple-touch-icon.png">
 {%- if page.layout == "post" %}
     <meta property="og:type" content="article">
-    <!-- meta property="og:image" content="FIXME" -->
     <meta property="og:description" content="{{ page.excerpt | strip_html | replace: "
 ", " " | escape | strip }}">
 {%- else %}
     <meta property="og:type" content="website">
-    <!-- meta property="og:image" content="FIXME" -->
     <meta property="og:description" content="{{ site.description }}">
 {%- endif %}
     <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
