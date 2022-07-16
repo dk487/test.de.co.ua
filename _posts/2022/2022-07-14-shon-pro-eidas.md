@@ -18,5 +18,11 @@ date: 2022-07-14 22:56:21 +03:00
 
 Мій [міні-тред][2] у Твітер.
 
+<div lang="en" markdown=1>
+Update: [Global website security ecosystem at risk from EU Digital Identity framework’s new
+website authentication provisions][3] — EFF open letter.
+</div>
+
 [1]: https://www.facebook.com/ruheight/posts/pfbid0zudPSRa2azBXjyVq6RoaHFWhT52xEerC16VWZpa6cGDwpbbt8XbWS3bd5xd5rpQel
 [2]: https://twitter.com/kastaneda/status/1546992906841595904
+[3]: https://www.eff.org/files/2022/03/02/eidas_cybersecurity_community_open_letter_1_1.pdf
