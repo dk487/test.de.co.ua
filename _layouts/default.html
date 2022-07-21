@@ -48,8 +48,13 @@ lang: uk
     <link rel="alternate" type="application/rss+xml" href="/rss.xml">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="application-name" content="{{ page.title | escape }}">
+{%- if page.opengraph %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="{{ site.http_url }}{{ site.baseurl }}/{{ page.opengraph }}">
+{%- else %}
     <meta name="twitter:card" content="summary">
     <meta property="og:image" content="{{ site.http_url }}{{ site.baseurl }}/opengraph.png">
+{%- endif %}
 {%- if page.layout == "post" %}
     <meta property="og:type" content="article">
     <meta property="og:description" content="{{ page.excerpt | strip_html | replace: "
