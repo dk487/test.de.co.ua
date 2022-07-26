@@ -1,7 +1,7 @@
 ---
 title: SSH HashKnownHosts
 title_lang: en
-placeholder: here
+date: 2022-07-26 12:09:24 +03:00
 ---
 
 Продовжую [тему про SSH][1]. Сьогодні буде трохи нудний пост про те, чому використання `HashKnownHosts` є, на мою думку, поганою ідеєю.
