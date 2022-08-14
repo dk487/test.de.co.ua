@@ -11,4 +11,8 @@ date: 2022-08-14 23:35:04 +03:00
 
 Схоже, мені потрібен [Covox Speech Thing][1].
 
+P.S. Випадково знайшов, що якийсь крутий чувак зробив [програвач MOD/S3M на Arduino][2]. Як же круто! Можна подивитися [відео демонстрації на YouTube][3] і згадати ті часи.
+
 [1]: https://en.wikipedia.org/wiki/Covox_Speech_Thing
+[2]: https://github.com/JarkkoPFC/arduino-music-player
+[3]: https://www.youtube.com/watch?v=Qk2NLHaBOnQ
