@@ -5,7 +5,7 @@ date: 2022-09-20 22:47:08 +03:00
 
 Запустив сабж.
 
-Крім [двох нових модулів][1], маю старий HC-06. На відміну від нових, старий працює. От з ним [StandardFirmataPlus][2] і злеті́ла.
+Крім [двох нових модулів][1], маю [старий HC-06][4]. На відміну від нових, старий працює. От з ним [StandardFirmataPlus][2] і злеті́ла.
 
 ![Схема підключення HC-06 до Arduino Nano](/uploads/HC-06.png)
 
@@ -67,3 +67,4 @@ _Оновлення 21 вересня:_ на всяк випадок ось [Sta
 [1]: /2022/09/19/bluetooth.html
 [2]: /2022/09/12/firmata.html
 [3]: https://github.com/kastaneda/arduino_sandbox/blob/master/StandardFirmataPlus_BT/StandardFirmataPlus_BT.ino
+[4]: /2021/01/08/Bluetooth-HC-06.html
