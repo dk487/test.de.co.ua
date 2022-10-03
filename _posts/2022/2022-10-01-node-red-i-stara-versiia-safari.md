@@ -25,7 +25,7 @@ x11vnc -forever -loop -noxdamage -repeat -shared -id pick
 _Оновленно 01:14._ Якщо запускати з Docker, то якось так:
 
 ```sh
-docker run -it --rm -p5900:5900 --shm-size 1g \
+docker run -it --rm -p5900:5900 --shm-size=1g \
   -e SCREEN_SIZE=1024x768 \
   -e KIOSK=http://172.17.0.1:1880/ui/ \
   kastaneda/vnc_x11
