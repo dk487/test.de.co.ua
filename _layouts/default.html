@@ -37,6 +37,10 @@ lang: uk
 
 {{ page.styles }}
 {%- endif %}
+{%- if jekyll.environment == "fix_tts"%}
+      body { font-size: xx-small }
+      h1 + p time { display: none }
+{%- endif %}
     </style>
     <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 {%- if page.previous %}
