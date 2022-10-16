@@ -1,5 +1,5 @@
 ---
-title: Про відкритий лист Boston Dynamic 
+title: Про відкритий лист Boston Dynamic
 date: 2022-10-06 22:49:14 +03:00
 ---
 

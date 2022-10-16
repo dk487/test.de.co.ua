@@ -25,7 +25,7 @@ _Оновлення 21 вересня:_ на всяк випадок ось [Sta
 @@ -746,6 +746,9 @@
      previousPINs[i] = 0;
    }
- 
+
 +  Firmata.setPinMode(10, PIN_MODE_IGNORE);
 +  Firmata.setPinMode(11, PIN_MODE_IGNORE);
 +
@@ -35,14 +35,14 @@ _Оновлення 21 вересня:_ на всяк випадок ось [Sta
 @@ -777,6 +780,8 @@
    isResetting = false;
  }
- 
+
 +SoftwareSerial BluetoothSerial(10, 11);
 +
  void setup()
  {
    Firmata.setFirmwareVersion(FIRMATA_FIRMWARE_MAJOR_VERSION, FIRMATA_FIRMWARE_MINOR_VERSION);
 @@ -795,14 +800,14 @@
- 
+
    // to use a port other than Serial, such as Serial1 on an Arduino Leonardo or Mega,
    // Call begin(baud) on the alternate serial port and pass it to Firmata to begin like this:
 -  // Serial1.begin(57600);
@@ -50,7 +50,7 @@ _Оновлення 21 вересня:_ на всяк випадок ось [Sta
 +  BluetoothSerial.begin(9600);
 +  Firmata.begin(BluetoothSerial);
    // However do not do this if you are using SERIAL_MESSAGE
- 
+
 -  Firmata.begin(57600);
 -  while (!Serial) {
 -    ; // wait for serial port to connect. Needed for ATmega32u4-based boards and Arduino 101
@@ -59,7 +59,7 @@ _Оновлення 21 вересня:_ на всяк випадок ось [Sta
 +  //while (!Serial) {
 +  //  ; // wait for serial port to connect. Needed for ATmega32u4-based boards and Arduino 101
 +  //}
- 
+
    systemResetCallback();  // reset to default config
  }
 ```

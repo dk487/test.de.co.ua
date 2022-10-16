@@ -7,7 +7,7 @@ date: 2022-08-28 00:44:39 +03:00
 
 <div lang="en" markdown=1>
 ```
-$ timedatectl 
+$ timedatectl
                Local time: Sun 2022-08-28 00:38:47 EEST
            Universal time: Sat 2022-08-27 21:38:47 UTC
                  RTC time: Sat 2022-08-27 21:38:47
