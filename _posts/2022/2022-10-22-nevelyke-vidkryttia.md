@@ -52,7 +52,9 @@ WHERE `id`=@JOB_ID;
 ```php
 function obtainJobId(\PDO $dbh): int|false
 {
-    $sth = $dbh->prepare('SELECT `id` FROM `sample_job` WHERE `status`=\'new\' ORDER BY `created` ASC, `id` ASC LIMIT 1');
+    $sth = $dbh->prepare('SELECT `id` FROM `sample_job` '
+        . 'WHERE `status`=\'new\' '
+        . 'ORDER BY `created` ASC, `id` ASC LIMIT 1');
     $sth->execute();
     $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
@@ -63,7 +65,9 @@ function obtainJobId(\PDO $dbh): int|false
 
     $id = $result[0]['id'];
 
-    $sth = $dbh->prepare('UPDATE `sample_job` SET `status`=\'working\', `started`=CURRENT_TIMESTAMP WHERE `status`=\'new\' AND id=:id');
+    $sth = $dbh->prepare('UPDATE `sample_job` '
+      . 'SET `status`=\'working\', `started`=CURRENT_TIMESTAMP '
+      . 'WHERE `status`=\'new\' AND id=:id');
     $sth->bindValue('id', $id, PDO::PARAM_INT);
     $sth->execute();
 
