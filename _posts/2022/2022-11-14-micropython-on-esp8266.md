@@ -45,7 +45,7 @@ minicom -D /dev/ttyUSB0
 Так чи інакша, для нормальної роботи з файловою системою MicroPython треба використовувати щось зручне. Я, як повний чайник, використовував Thonny IDE.
 
 ```sh
-sudo apt install esptool thonny
+sudo apt install thonny
 ```
 
 Далі я в настройках Thonny кажу використовувати інтерпретатор на платі ESP8266 (Tools → Options → Interpreter). Усьо, можна виконувати код безпосередньо на платі та писати туди файли.
