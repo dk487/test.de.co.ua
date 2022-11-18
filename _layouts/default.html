@@ -11,7 +11,7 @@ lang: uk
     <title
 {%- if page.title_lang %} lang="{{ page.title_lang }}"
 {%- endif %}>{%- if page.draft -%}[DRAFT] {% endif -%}
-{{ page.title | escape }}</title>
+{{ page.title | strip_html | escape }}</title>
     <style>
       body { max-width: 50em; padding: 1em; margin: 0 auto }
 {%- if content contains "<img" %}
@@ -51,7 +51,7 @@ lang: uk
 {%- endif %}
     <link rel="alternate" type="application/rss+xml" href="/rss.xml">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <meta name="application-name" content="{{ page.title | escape }}">
+    <meta name="application-name" content="{{ page.title | strip_html | escape }}">
 {%- if page.opengraph %}
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:image" content="{{ site.http_url }}{{ site.baseurl }}/{{ page.opengraph }}">
@@ -68,7 +68,7 @@ lang: uk
     <meta property="og:description" content="{{ site.description }}">
 {%- endif %}
     <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-    <meta property="og:title" content="{{ page.title | escape }}">
+    <meta property="og:title" content="{{ page.title | strip_html | escape }}">
   </head>
   <body>
     <main>

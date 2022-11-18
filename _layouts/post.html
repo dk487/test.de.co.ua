@@ -7,7 +7,7 @@ layout: default
 <h1 itemprop="name headline"
 {%- if page.title_lang %} lang="{{ page.title_lang }}"
 {%- endif %}>{%- if page.draft -%}[DRAFT] {% endif -%}
-{{ page.title | escape }}</h1>
+{{ page.title | markdownify | remove: '<p>' | remove: '</p>' | strip }}</h1>
 
 <p>
   <em>
