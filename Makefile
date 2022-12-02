@@ -35,7 +35,7 @@ post:
 draft:
 	echo "---\ntitle: $(SLUG)\nplaceholder: here\n---\n\n..." > _drafts/$(SLUG).md
 
-draft ?= $(shell find _drafts -type f | head -n 1)
+draft ?= $(shell find _drafts -type f | grep -v .gitkeep | head -n 1)
 DRAFT ?= $(draft)
 DSLUG = $(patsubst _drafts/%.md,%,$(DRAFT))
 pub:
