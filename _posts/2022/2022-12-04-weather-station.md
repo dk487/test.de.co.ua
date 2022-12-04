@@ -205,5 +205,5 @@ if ($sth->rowCount()) {
 
 От тепер все. Поки писав цей пост, в базу потрапило десь приблизно 40 нових вимірювань.
 
-[1]: http://flo.de.co.ua/2021/05/23/arduino.html
+[1]: https://flo.de.co.ua/2021/05/23/arduino.html
 [2]: https://github.com/dafvid/micropython-bmp280/blob/master/bmp280.py
