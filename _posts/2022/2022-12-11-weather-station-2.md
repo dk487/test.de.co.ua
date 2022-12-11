@@ -14,7 +14,7 @@ opengraph: /uploads/board03_og.jpg
   <a href="/uploads/board03_base.webp" >
     <picture>
       <source srcset="/uploads/board03_base.webp" type="image/webp">
-      <img src="/uploads/board03_base_small.jog" alt="На фото: макетна плата з дротами">
+      <img src="/uploads/board03_base_small.jpg" alt="На фото: макетна плата з дротами">
     </picture>
   </a>
 </p>
@@ -25,7 +25,7 @@ opengraph: /uploads/board03_og.jpg
   <a href="/uploads/board03.webp" >
     <picture>
       <source srcset="/uploads/board03.webp" type="image/webp">
-      <img src="/uploads/board03_small.jog" alt="На фото: макетна плата з погодною станцією у зборі">
+      <img src="/uploads/board03_small.jpg" alt="На фото: макетна плата з погодною станцією у зборі">
     </picture>
   </a>
 </p>
