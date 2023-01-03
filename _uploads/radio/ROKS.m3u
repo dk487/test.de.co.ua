@@ -1,0 +1,17 @@
+#EXTM3U
+#PLAYLIST: Radio ROKS
+
+#EXTINF:-1, Radio ROKS
+http://online.radioroks.ua/RadioROKS_Live
+
+#EXTINF:-1, Radio ROKS Український Рок
+http://online.radioroks.ua/RadioROKS_Ukr_Live
+
+#EXTINF:-1, Radio ROKS New Rock
+http://online.radioroks.ua/RadioROKS_NewRock_Live
+
+#EXTINF:-1, Radio ROKS Hard'n'Heavy
+http://online.radioroks.ua/RadioROKS_HardnHeavy_Live
+
+#EXTINF:-1, Radio ROKS Ballads
+http://online.radioroks.ua/RadioROKS_Ballads_Live

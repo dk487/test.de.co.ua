@@ -1,0 +1,11 @@
+#EXTM3U
+#PLAYLIST: Українське радіо
+
+#EXTINF:-1, УР-1: Перший канал
+http://radio.ukr.radio:8000/ur1-mp3
+
+#EXTINF:-1, УР-2: Радіо Промінь
+http://radio.ukr.radio:8000/ur2-mp3
+
+#EXTINF:-1, УР-3: Радіо Культура
+http://radio.ukr.radio:8000/ur3-mp3
