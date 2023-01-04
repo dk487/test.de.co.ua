@@ -6,7 +6,7 @@ date: 2022-12-18 21:50:28 +02:00
 
 Twitter finally got become unusable to everyday use.
 
-Here are [the new rules][1], and they're damn screwed up as fuck. Here is the copy, just in case if mr. Musk will delete it next day.
+Here are [the new rules][1], and they're damn screwed up as fuck. Here is the copy, just in case if mr Musk will delete it next day.
 
 > ## Promotion of alternative social platforms policy
 >
