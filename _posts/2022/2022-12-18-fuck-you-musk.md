@@ -55,4 +55,4 @@ Okay, to hell all that. I can post my stupid thoughts there or anywhere else. Bu
 _Update: December 19, 15:20._ Haha, the new rule has just mysteriously disappeared, just as I expected! So I updated the link, now it points to the snapshot on the WayBack Machine. Nonetheless, damage to the society is already made, thus Twitter must die.
 
 [x]: https://help.twitter.com/en/rules-and-policies/social-platforms-policy
-[1]: http://web.archive.org/web/20221218220050/https://help.twitter.com/en/rules-and-policies/social-platforms-policy
+[1]: https://web.archive.org/web/20221218220050/https://help.twitter.com/en/rules-and-policies/social-platforms-policy
