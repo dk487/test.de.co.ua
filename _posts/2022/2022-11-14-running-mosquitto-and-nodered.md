@@ -1,8 +1,8 @@
 ---
 title: Запуск <span lang="en">Mosquitto</span> та <span lang="en">Node-RED</span>
 date: 2022-11-14 15:04:43 +02:00
-mtime: 2022-12-11 07:28:42 +02:00
-opengraph: /uploads/nodered_connected_3_nodes
+mtime: 2023-03-03 17:03:34 +02:00
+opengraph: uploads/nodered_connected_3_nodes.png
 ---
 
 Я так подумав: раз в мене вже тут вийшов у [попередньому пості́][1] такий собі лікнеп для чайників, то треба розповісти останні деталі, а саме про <span lang="en">Mosquitto</span> та <span lang="en">Node-RED</span>.

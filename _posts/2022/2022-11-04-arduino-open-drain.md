@@ -2,8 +2,8 @@
 title: Arduino open drain
 title_lang: en
 date: 2022-11-04 23:26:31 +02:00
-mtime: 2022-12-11 07:28:42 +02:00
-opengraph: /uploads/blink2.png
+mtime: 2023-03-03 17:03:34 +02:00
+opengraph: uploads/blink2.png
 ---
 
 Сьогодні я за допомогою Arduino блимав світлодіо́дом. Двома світлодіо́дами. Ха-ха.

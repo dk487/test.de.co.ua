@@ -1,8 +1,8 @@
 ---
 title: Firmata + Bluetooth
 date: 2022-09-20 22:47:08 +03:00
-mtime: 2022-12-11 07:32:34 +02:00
-opengraph: /uploads/HC-06.png
+mtime: 2023-03-03 17:03:34 +02:00
+opengraph: uploads/HC-06.png
 ---
 
 Запустив сабж.
