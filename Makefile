@@ -110,4 +110,31 @@ package: build compress $(DOMAIN).tar.gz
 $(DOMAIN).tar.gz:
 	tar zcf $@ -C _site/ .
 
-.PHONY: all post draft pub geany build up test test-local test-external clean compress package $(DOMAIN).tar.gz
+post_checkout:
+	for f in `git ls-files _posts | grep \.md$$`; \
+	do \
+	  git log --pretty=format:"%cI $$f %s" $$f | \
+	    grep -v 'Fix mtime' | \
+	    head -n1 | \
+	    awk '{ print $$1 " " $$2 }' | \
+	    xargs -n2 touch -d ; \
+	done
+
+mtime:
+	for f in `git ls-files _posts | grep \.md$$`; \
+	do \
+	  d=`date "+%F %X %:z" -r $$f`; \
+	  if [ -z "`grep '^mtime: ' $$f`" ]; \
+	  then \
+	    d0=`grep -P "^date: " $$f`; \
+	    if [ "$$d0" != "date: $$d" ]; \
+	    then \
+	      sed "0,/^date:.*$$/s//\\0\\nmtime: $$d/" -i $$f; \
+	    fi \
+	  else \
+	    sed "s/^mtime:.*$$/mtime: $$d/" -i $$f; \
+	  fi; \
+	  touch -d "$$d" $$f; \
+	done
+
+.PHONY: all post draft pub geany build up test test-local test-external clean compress package $(DOMAIN).tar.gz post_checkout mtime
