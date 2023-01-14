@@ -49,7 +49,7 @@ lang: uk
 {%- if page.next %}
     <link rel="next" href="{{ page.next.url }}">
 {%- endif %}
-    <link rel="alternate" type="application/rss+xml" href="/rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="application-name" content="{{ page.title | strip_html | escape }}">
 {%- if page.opengraph %}
