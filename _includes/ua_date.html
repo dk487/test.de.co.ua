@@ -1,0 +1,19 @@
+{{- include.date | date: '%e' -}}
+
+{%- assign _m = include.date | date: '%m' -%}
+{%- if _m == '01' %} січня {% endif %}
+{%- if _m == '02' %} лютого {% endif %}
+{%- if _m == '03' %} березня {% endif %}
+{%- if _m == '04' %} квітня {% endif %}
+{%- if _m == '05' %} травня {% endif %}
+{%- if _m == '06' %} червня {% endif %}
+{%- if _m == '07' %} липня {% endif %}
+{%- if _m == '08' %} серпня {% endif %}
+{%- if _m == '09' %} вересня {% endif %}
+{%- if _m == '10' %} жовтня {% endif %}
+{%- if _m == '11' %} листопада {% endif %}
+{%- if _m == '12' %} грудня {% endif %}
+
+{{- include.date | date: '%Y' }} року,
+
+{{- include.date | date: ' %H:%M' -}}
