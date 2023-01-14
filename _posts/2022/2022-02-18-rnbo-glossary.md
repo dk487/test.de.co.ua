@@ -1,6 +1,7 @@
 ---
 title: Глосарій РНБО
 date: 2022-02-18 17:54:21 +02:00
+mtime: 2022-03-16 10:10:35 +02:00
 styles: |
   @media (max-width: 25em) {
     table, tr, td { display: block; border: none }

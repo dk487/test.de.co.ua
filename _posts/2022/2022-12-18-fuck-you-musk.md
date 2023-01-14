@@ -2,6 +2,7 @@
 title: Fuck you, Musk
 lang: en
 date: 2022-12-18 21:50:28 +02:00
+mtime: 2023-01-08 22:40:31 +02:00
 ---
 
 Twitter finally got become unusable to everyday use.

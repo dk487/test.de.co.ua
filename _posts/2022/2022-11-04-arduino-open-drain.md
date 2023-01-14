@@ -2,6 +2,7 @@
 title: Arduino open drain
 title_lang: en
 date: 2022-11-04 23:26:31 +02:00
+mtime: 2022-12-11 07:28:42 +02:00
 opengraph: /uploads/blink2.png
 ---
 

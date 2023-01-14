@@ -1,6 +1,7 @@
 ---
 title: MicroPython на ESP8266
 date: 2022-11-14 04:40:03 +02:00
+mtime: 2022-12-11 07:25:30 +02:00
 opengraph: /uploads/nodemcu_button.png
 ---
 

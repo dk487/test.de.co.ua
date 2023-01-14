@@ -1,6 +1,7 @@
 ---
 title: Рівноприскорений рух
 date: 2021-11-15 18:17:06 +02:00
+mtime: 2021-12-11 17:34:07 +02:00
 styles: |
   .formula { font-size: 135%; text-align: center }
 
