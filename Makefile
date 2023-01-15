@@ -113,7 +113,7 @@ $(DOMAIN).tar.gz:
 post_checkout:
 	for f in `git ls-files _posts | grep \.md$$`; \
 	do \
-	  git log --pretty=format:"%cI $$f %s" $$f | \
+	  git log --pretty=format:"%aI $$f %s" $$f | \
 	    grep -v 'Fix mtime' | \
 	    head -n1 | \
 	    awk '{ print $$1 " " $$2 }' | \
@@ -132,7 +132,7 @@ mtime:
 	      sed "0,/^date:.*$$/s//\\0\\nmtime: $$d/" -i $$f; \
 	    fi \
 	  else \
-	    sed "s/^mtime:.*$$/mtime: $$d/" -i $$f; \
+	    sed "0,/^mtime:.*$$/s//mtime: $$d/" -i $$f; \
 	  fi; \
 	  touch -d "$$d" $$f; \
 	done
