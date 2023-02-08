@@ -1,6 +1,6 @@
 ---
 title: Twitter здох?
-date: 2023-02-09 00:34:40 +02:00
+date: 2023-02-09 00:37:17 +02:00
 ---
 
 Твітор глючить все більше, все частіше і все єбанутіше.
@@ -25,3 +25,4 @@ Upd.:
 
  - [Instagram and Twitter appear to suffer outage as users report they cannot post](https://news.yahoo.com/instagram-twitter-appear-suffer-outage-220102054.html)
  - [Twitter down as users left frustrated by 'daily limit' error and unable to post](https://www.dailystar.co.uk/news/latest-news/breaking-twitter-users-left-frustrated-29169686)
+ - [Can't send Tweets? Hit the daily tweet limit? It's not just you](https://www.androidcentral.com/apps-software/cant-send-tweets-hit-the-daily-tweet-limit-its-not-just-you)
