@@ -1,6 +1,6 @@
 ---
 title: Twitter здох?
-date: 2023-02-09 00:37:17 +02:00
+date: 2023-02-09 00:43:01 +02:00
 ---
 
 Твітор глючить все більше, все частіше і все єбанутіше.
@@ -21,8 +21,13 @@ date: 2023-02-09 00:37:17 +02:00
 
 Треба чи тут запиляти свій модуль коментів, чи переходити на Mastodon, чи що.
 
+<div lang="en" markdown=1>
+
 Upd.:
 
- - [Instagram and Twitter appear to suffer outage as users report they cannot post](https://news.yahoo.com/instagram-twitter-appear-suffer-outage-220102054.html)
- - [Twitter down as users left frustrated by 'daily limit' error and unable to post](https://www.dailystar.co.uk/news/latest-news/breaking-twitter-users-left-frustrated-29169686)
- - [Can't send Tweets? Hit the daily tweet limit? It's not just you](https://www.androidcentral.com/apps-software/cant-send-tweets-hit-the-daily-tweet-limit-its-not-just-you)
+ - Independent: [Instagram and Twitter appear to suffer outage as users report they cannot post](https://news.yahoo.com/instagram-twitter-appear-suffer-outage-220102054.html)
+ - Daily Star: [Twitter down as users left frustrated by 'daily limit' error and unable to post](https://www.dailystar.co.uk/news/latest-news/breaking-twitter-users-left-frustrated-29169686)
+ - Android Central: [Can't send Tweets? Hit the daily tweet limit? It's not just you](https://www.androidcentral.com/apps-software/cant-send-tweets-hit-the-daily-tweet-limit-its-not-just-you)
+ - CNBC: [Twitter is telling users that they’ve reached their daily limit for posts](https://www.cnbc.com/2023/02/08/twitter-daily-limit-error-prevents-users-from-posting.html)
+ 
+ </div>
