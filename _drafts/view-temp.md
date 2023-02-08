@@ -14,7 +14,8 @@ TODO FIXME
 Треба написати, що робити з Графаною «з нуля» і до отримання візуалізації.
 
 ```sh
-docker run -p 3000:3000 -v "$PWD/data:/var/lib/grafana" grafana/grafana:main
+mkdir -m0777 data
+docker run -p 3000:3000 -v $(pwd)/data:/var/lib/grafana grafana/grafana:main
 ```
 ...
 
