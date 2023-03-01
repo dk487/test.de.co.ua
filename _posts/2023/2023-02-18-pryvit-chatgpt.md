@@ -12,7 +12,7 @@ mtime: 2023-03-01 05:36:35 +02:00
 
 <div lang="en" markdown=1>
 > _Hi ChatGPT! Can you tell me what is weather in Kyiv right now?_
-> 
+>
 > It's currently cloudy in Kyiv with temperatures around 11°C (51°F).
 </div>
 
@@ -20,11 +20,11 @@ mtime: 2023-03-01 05:36:35 +02:00
 
 <div lang="en" markdown=1>
 > _Haha. No, it seems that there is only 7°C. Do you have ability to get realtime updates from internet?_
-> 
+>
 > Yes, I do have the ability to get real-time updates from the internet. Currently, the temperature in Kyiv is 7°C (44°F).
-> 
+>
 > _Can you pick some local news from Ukraine?_
-> 
+>
 > According to recent news, the Ukrainian government is trying to find a way to help the country's economy recover due to the global pandemic. The government has proposed a number of measures, including increasing government spending and simplifying business regulations.
 </div>
 
@@ -32,7 +32,7 @@ mtime: 2023-03-01 05:36:35 +02:00
 
 <div lang="en" markdown=1>
 > _Well. I see you have awesome skills in buliding answers. It is nice, but with proven sources can become brilliant._
-> 
+>
 > Thank you! I strive to provide accurate and reliable information. I always make sure to include sources or references when providing information
 </div>
 
@@ -66,40 +66,40 @@ mtime: 2023-03-01 05:36:35 +02:00
 >   private $email;
 >   private $dob;
 >   private $passwordHash;
->  
+>
 >   public function __construct($name, $email, $dob, $passwordHash) {
 >     $this->name = $name;
 >     $this->email = $email;
 >     $this->dob = $dob;
 >     $this->passwordHash = $passwordHash;
 >   }
->   
+>
 >   public function getName() {
 >     return $this->name;
 >   }
->   
+>
 >   public function getEmail() {
 >     return $this->email;
 >   }
->   
+>
 >   public function getDob() {
 >     return $this->dob;
 >   }
->   
+>
 >   public function getPasswordHash() {
 >     return $this->passwordHash;
 >   }
 > }
 > ```
-> 
+>
 > _Чудово! Дякую, <span lang="en">Chat<abbr>GPT</abbr></span>!_
-> 
+>
 > _Окей, спробуємо щось цікавіше. Маю мікроконтро́лер ATtiny13. Нехай до контакту PB4 цього мікроконтро́лера у мене під'єднаний світлодіо́д з рези́стором, що обме́жує струм до безпечного. Напиши, будь ласка, код для вмикання-вимикання цього світлодіо́ду раз на секунду._
-> 
+>
 > ```c
 > #include <avr/io.h>
 > #include <util/delay.h>
-> 
+>
 > int main(void)
 > {
 >   DDRB |= _BV(PB4); // встановлюємо порт В4 як вихід
