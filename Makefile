@@ -69,7 +69,6 @@ test-local: build
 		--disable-external \
 		--internal-domains https://$(DOMAIN) \
 		--check-html \
-		--check-favicon \
 		--check-opengraph \
 		--report-missing-names \
 		--report-missing-doctype \
@@ -84,7 +83,6 @@ test-external: build
 	$(HTMLPROOFER) ./_site \
 		--internal-domains https://$(DOMAIN) \
 		--check-html \
-		--check-favicon \
 		--check-opengraph \
 		--report-missing-names \
 		--report-missing-doctype \

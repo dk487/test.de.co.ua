@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<svg viewBox="0 0 600 600" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="300" cy="300" r="250" fill="#000"/>
-  <path d="M 60 300 Q 80 80 300 60 H 300 V 300 Z" fill="#ff0"/>
-  <path d="M 540 300 Q 520 520 300 540 H 300 V 300 Z" fill="#ff0"/>
+<svg viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="30" cy="30" r="25" fill="#000"/>
+  <path d="M6 30Q8 8 30 6H30V30Z" fill="#ff0"/>
+  <path d="M54 30Q52 52 30 54H30V30Z" fill="#ff0"/>
 </svg>
