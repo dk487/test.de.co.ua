@@ -1,7 +1,7 @@
 ---
 title: Пого́дна станція
 date: 2022-12-04 13:30:03 +02:00
-mtime: 2023-03-03 17:03:34 +02:00
+mtime: 2023-01-08 22:38:51 +02:00
 opengraph: uploads/weather_station.png
 ---
 
