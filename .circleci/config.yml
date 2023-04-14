@@ -17,4 +17,4 @@ jobs:
           command: "jekyll build"
       - run:
           name: "Run HTML-Proofer"
-          command: "make test-local"
+          command: "make test-local -o build"
