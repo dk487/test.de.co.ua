@@ -16,7 +16,7 @@ layout:
     <ttl>21600</ttl>
 {% for _item in site.posts limit: 10 %}
     <item>
-      <title>{{ _item.title | xml_escape }}</title>
+      <title>{{ _item.title | strip_html | xml_escape }}</title>
       <description><![CDATA[
 
 {{ _item.content | trim }}

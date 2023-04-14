@@ -43,11 +43,17 @@ lang: uk
 {%- endif %}
     </style>
     <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-{%- if page.previous %}
+{%- if page.previous and page.previous.rss_only != true %}
     <link rel="prev" href="{{ page.previous.url }}">
 {%- endif %}
-{%- if page.next %}
+{%- if page.previous and page.previous.rss_only == true and page.previous.previous %}
+    <link rel="prev" href="{{ page.previous.previous.url }}">
+{%- endif %}
+{%- if page.next and page.next.rss_only != true %}
     <link rel="next" href="{{ page.next.url }}">
+{%- endif %}
+{%- if page.next and page.next.rss_only == true and page.next.next %}
+    <link rel="next" href="{{ page.next.next.url }}">
 {%- endif %}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
     <link rel="icon" href="data:image/svg+xml,<svg viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22><circle cx=%2230%22 cy=%2230%22 r=%2225%22/><path d=%22M6 30Q8 8 30 6v24zM54 30q-2 22-24 24V30z%22 fill=%22%23ff0%22/></svg>">
@@ -71,6 +77,25 @@ lang: uk
     <meta property="og:title" content="{{ page.title | strip_html | escape }}">
   </head>
   <body>
+{%- if page.rss_only %}
+    <aside>
+{%- if page.lang %}
+      <p lang="en">
+        <em>
+          This is a secret post, only for RSS readers!
+        </em>
+        <a href="https://daverupert.com/2018/01/welcome-to-rss-club/">Read more about RSS Club</a>.
+      </p>
+{%- else %}
+      <p>
+        <em>
+          Це секретний пост, тільки для читачів RSS!
+        </em>
+        <a href="https://daverupert.com/2018/01/welcome-to-rss-club/" hreflang="en">Read more about RSS Club</a>.
+      </p>
+{%- endif %}
+    </aside>
+{%- endif %}
     <main>
 
 {{ content }}
@@ -79,14 +104,20 @@ lang: uk
     <footer {%- if page.lang %} lang="{{ layout.lang }}"{% endif %}>
       <p>
         <span>{{ site.copyright }}</span>
-{%- if page.previous %}
+{%- if page.previous and page.previous.rss_only == true and page.previous.previous %}
+        <span aria-hidden="true">|</span> <a href="{{ page.previous.previous.url }}"><span aria-hidden="true">&lt;&lt;&lt;</span> Попередній пост</a>
+{%- endif %}
+{%- if page.previous and page.previous.rss_only != true %}
         <span aria-hidden="true">|</span> <a href="{{ page.previous.url }}"><span aria-hidden="true">&lt;&lt;&lt;</span> Попередній пост</a>
 {%- endif %}
 {%- if page.url != "/" %}
         <span aria-hidden="true">|</span> <a href="/">На початок</a>
 {%- endif %}
-{%- if page.next %}
+{%- if page.next and page.next.rss_only != true %}
         <span aria-hidden="true">|</span> <a href="{{ page.next.url }}">Наступний пост <span aria-hidden="true">&gt;&gt;&gt;</span></a>
+{%- endif %}
+{%- if page.next and page.next.rss_only == true and page.next.next %}
+        <span aria-hidden="true">|</span> <a href="{{ page.next.next.url }}">Наступний пост <span aria-hidden="true">&gt;&gt;&gt;</span></a>
 {%- endif %}
         <span aria-hidden="true">|</span> <a href="/rss.xml" type="application/rss+xml">RSS</a>
         <span aria-hidden="true">|</span> <a href="https://github.com/dk487/test.de.co.ua">Github</a>
