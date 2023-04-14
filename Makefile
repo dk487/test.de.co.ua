@@ -32,6 +32,9 @@ FILEDATE = $(shell date "+%Y/%F")
 post:
 	echo "---\ntitle: $(SLUG)\ndate: $(POSTDATE)\n---\n\n..." > _posts/$(FILEDATE)-$(SLUG).md
 
+time:
+	git st --porcelain | grep "?? _posts" | cut -c 4- | xargs -L1 sed -i "s/^date:.*$$/date: $(POSTDATE)/"
+
 draft:
 	echo "---\ntitle: $(SLUG)\nplaceholder: here\n---\n\n..." > _drafts/$(SLUG).md
 
