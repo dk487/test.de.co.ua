@@ -7,7 +7,7 @@ mtime: 2023-11-08 04:14:01 +02:00
 Так, спробую один фокус…
 
 Наче працює: `make time` оновлює поле date у front matter для нових пості́в.
-А ну, спробую. 
+А ну, спробую.
 
 ```sh
 make time && git add -A && git ci -m "New post: date/time automation"
