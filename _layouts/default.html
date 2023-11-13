@@ -11,7 +11,7 @@ lang: uk
     <title
 {%- if page.title_lang %} lang="{{ page.title_lang }}"
 {%- endif %}>{%- if page.draft -%}[DRAFT] {% endif -%}
-{{ page.title | markdownify | strip_html | escape }}</title>
+{{ page.title | markdownify | strip_html | escape | strip }}</title>
     <style>
       body { max-width: 50em; padding: 1em; margin: 0 auto }
 {%- if content contains "<img" %}
