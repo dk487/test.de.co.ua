@@ -6,7 +6,8 @@ baseurl: ''
 title: Тестовий сайт
 description: Тіпа, блоґ.
 copyright: © dk487
-timezone: Europe/Kyiv
+timezone: Europe/Kiev
+#timezone: Europe/Kyiv
 
 collections:
   posts:
