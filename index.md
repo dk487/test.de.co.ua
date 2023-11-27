@@ -22,7 +22,7 @@ title: Тестовий сайт
 ## {{ post_year }}
 
 {% endif %}
-- [{% if post.draft %}[DRAFT]{% else %}{{ post.date | date: "%Y-%m-%d" }}:{% endif %} {{ post.title }}]({{ post.url }})
+- [{% if post.draft %}[DRAFT]{% else %}{{ post.date | date: "%Y-%m-%d" }}:{% endif %} {{ post.title }}]({{ post.url }}){% if post.title_lang %}{:lang="{{ post.title_lang }}"}{% endif %}
 
   {{ post.excerpt }}
 {% assign prev_year = post_year %}
