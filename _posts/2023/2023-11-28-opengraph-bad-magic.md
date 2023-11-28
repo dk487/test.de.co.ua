@@ -2,6 +2,7 @@
 title: OpenGraph bad magic
 title_lang: en
 date: 2023-11-28 04:43:23 +02:00
+mtime: 2023-11-28 04:55:11 +02:00
 opengraph: /opengraph/2023-11-28-opengraph-bad-magic.png
 ---
 
@@ -23,9 +24,10 @@ opegraph_generator:
   key_color: ff0
 ```
 
-…і щоб далі Jekyll та Makefile та мої скрипти магічним чином з шаблона і цих змінних створили файл, скажімо, `opengraph/2023-11-28-opengraph-bad-magic.svg` (далі вже просто). Ви ж в курсі, шаблони ж не тільки для <abbr>HTML</abbr>? Ними можна генерувати будь-що текстове — <abbr>RSS</abbr>, <abbr>JSON</abbr>, можна і <abbr>SVG</abbr>.
+…і щоб далі Jekyll та Makefile та мої скрипти магічним чином з шаблона і цих змінних створили файл, скажімо, [`opengraph/2023-11-28-opengraph-bad-magic.svg`][3] (далі вже просто). Ви ж в курсі, шаблони ж не тільки для <abbr>HTML</abbr>? Ними можна генерувати будь-що текстове — <abbr>RSS</abbr>, <abbr>JSON</abbr>, можна і <abbr>SVG</abbr>.
 
 Але я поки не придумав, як би це зробити. Зокрема, велике западло у тому, що все що робе Jenkins потрапляє у вихідний підкаталог `_site`, а це зовсім не те що треба.
 
 [1]: /2022/07/16/opengraph-image.html
 [2]: /2023/10/16/hello-kubuntu.html
+[3]: https://github.com/dk487/test.de.co.ua/blob/master/opengraph/2023-11-28-opengraph-bad-magic.svg?short_path=5058a56
