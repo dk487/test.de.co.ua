@@ -2,7 +2,7 @@
 title: OpenGraph bad magic
 title_lang: en
 date: 2023-11-28 04:43:23 +02:00
-opegraph: /opengraph/2023-11-28-opengraph-bad-magic.png
+opengraph: /opengraph/2023-11-28-opengraph-bad-magic.png
 ---
 
 Намагаюся зробити одну дуже збочену фігню. Так, подивимось…
