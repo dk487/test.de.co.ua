@@ -2,10 +2,9 @@
 title: OpenGraph bad magic
 title_lang: en
 date: 2023-11-28 04:43:23 +02:00
-mtime: 2023-11-30 20:41:15 +02:00
-opengraph: /opengraph/2023-11-28-opengraph-bad-magic.png
+mtime: 2023-11-30 22:03:12 +02:00
 opegraph_generator:
-  template: clickbait01.svg
+  template: clickbait01
   label_row1: Погана магія
   label_row2: OpenGraph
   key_color: ff0
@@ -33,6 +32,61 @@ opegraph_generator:
 
 Але я поки не придумав, як би це зробити. Зокрема, велике западло у тому, що все що робе Jekyll потрапляє у вихідний підкаталог `_site`, а це зовсім не те що треба.
 
+_Оновлення від 30 листопада:_ наче щось придумав!
+
+
+## Три різних Jekyll'а
+
+Це серйозне збочення, але я щось придумав.
+
+Так от. У мене є нормальний [`_config.yml`][4]. З ним все добре, нічого не міняється, він використовується для збірки сайту командою `jekyll build` і саме з ним працюватиме GitHub Pages.
+
+А додатково є два інших конфігураційних файли Jekyll'а, [`_og_prepare.yml`][5] та [`_og_generate.yml`][6] для двоетапної генерації SVG. Це тепер робиться командою `make badmagic`.
+
+
+### Етап 1 з 2: підготовка
+
+[Перетворюємо Markdown в Markdown!][7]
+
+На цьому етапі з усіх постів сайту створюються відповідні їм вихідні файли у `opengraph/_tmp`.
+
+При цьому відтворюється іменування джерельних файлів Jekyll'а. Зокрема, з поточної сторінки генерується файл з іменем `/opengraph/_tmp/2023-11-28-opengraph-bad-magic.md` з отаким <span lang="en">front matter</span>:
+
+```yaml
+permalink: '2023-11-28-opengraph-bad-magic.svg'
+layout: og_clickbait01.svg
+label_row1: Погана магія
+label_row2: OpenGraph
+key_color: ff0
+```
+
+Секції з контентом немає, тільки <span lang="en">front matter</span>. Нам цього цілком і повністю має вистачити, щоб згенерувати <abbr>SVG</abbr> на наступному етапі.
+
+Для інших сторінок (тобто тих, у яких немає `opegraph_generator`) генерується якась тупа заглушка.
+
+
+### Етап 2 з 2: генерація
+
+Хоч дуже збочено, але ми зібрали все що треба на попередньому етапі. Далі все просто:
+[перетворюємо Markdown в SVG][8].
+
+
+### Етап 3 з 2: конвертація <abbr>SVG</abbr> в PNG
+
+Це у мене і так робиться при кожному запуску `make`. Я тільки додав спеціальні правила для обробки підкаталога `opengraph/_svg`.
+
+Така особливість мого сайту, що результуючі сконвертовані картинки я додаю в свій репозиторій. Так, їх можна згенерувати знову, якщо зміниться першоджерело. Так, я в репозиторії поруч з джерелом зберігаю згенерований бінарнік. Це не дуже красиво, але зручно. Я колись давно став так робити [для іконки сайту][9] і, в принципі, мене не сильно бісить.
+
+Так. Ладно. Все похуй.
+
+**Воно працює!**
+
 [1]: /2022/07/16/opengraph-image.html
 [2]: /2023/10/16/hello-kubuntu.html
-[3]: https://github.com/dk487/test.de.co.ua/blob/master/opengraph/_svg/2023-11-28-opengraph-bad-magic.svg?plain=1
+[3]: https://github.com/dk487/test.de.co.ua/blob/master/opengraph/_svg/2023-11-28-opengraph-bad-magic.svg
+[4]: https://github.com/dk487/test.de.co.ua/blob/master/_config.yml
+[5]: https://github.com/dk487/test.de.co.ua/blob/master/_og_prepare.yml
+[6]: https://github.com/dk487/test.de.co.ua/blob/master/_og_generate.yml
+[7]: https://github.com/dk487/test.de.co.ua/blob/master/_layouts/og_prepare.md?plain=1
+[8]: https://github.com/dk487/test.de.co.ua/blob/master/_layouts/og_clickbait01.svg?short_path=b70fd43
+[9]: /2021/10/08/icons.html
