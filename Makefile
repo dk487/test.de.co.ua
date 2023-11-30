@@ -56,6 +56,11 @@ apple-touch-icon.png: favicon.svg
 	optipng $@
 	advpng -z4 $@
 
+opengraph/%.png: opengraph/_svg/%.svg
+	rsvg-convert $< -o $@
+	optipng $@
+	advpng -z4 $@
+
 %.png: %.svg
 	rsvg-convert $< -o $@
 	optipng $@
