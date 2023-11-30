@@ -14,8 +14,8 @@ HTMLPROOFER ?= htmlproofer
 # HTMLPROOFER = docker run --rm -v $(ROOT):/src klakegg/html-proofer
 
 DOMAIN := test.de.co.ua
-OPENGRAPH_SVG := $(shell find opengraph/ -type f -name '*.svg')
-OPENGRAPH_PNG := $(patsubst %.svg,%.png,$(OPENGRAPH_SVG))
+OPENGRAPH_SVG := $(shell find opengraph/_svg/ -type f -name '*.svg')
+OPENGRAPH_PNG := $(patsubst opengraph/_svg/%,opengraph/%,$(patsubst %.svg,%.png,$(OPENGRAPH_SVG)))
 ASSETS := favicon.ico apple-touch-icon.png opengraph.png $(OPENGRAPH_PNG)
 TEXTFILES := '.*\.\(html\|css\|js\|txt\|xml\|ico\)$$'
 
