@@ -1,0 +1,34 @@
+# OpenGraph SVH splash images, pass 1: prepare
+
+destination: opengraph/_tmp/
+
+collections:
+  uploads:
+    output: false
+
+defaults:
+- scope:
+    path: ''
+  values:
+    layout: ''
+    permalink: ''
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: og_prepare
+    permalink: '/:categories/:year-:month-:day-:title.md'
+
+exclude:
+- index.md
+- opengraph
+- README.md
+- CNAME
+- Makefile
+- rss.xml
+- rss.xsl
+- sitemap.xml
+- apple-touch-icon.png
+- favicon.ico
+- favicon.svg
+- robots.txt

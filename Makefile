@@ -145,4 +145,9 @@ mtime:
 	  touch -d "$$d" $$f; \
 	done
 
+badmagic:
+	$(JEKYLL) build --config _og_prepare.yml
+	ln -rs _layouts opengraph/_tmp/_layouts
+	$(JEKYLL) build --config _og_generate.yml
+
 .PHONY: all post draft pub geany build up test test-local test-external clean compress package $(DOMAIN).tar.gz post_checkout mtime

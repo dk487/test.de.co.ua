@@ -1,0 +1,5 @@
+# OpenGraph SVH splash images, pass 2: generate
+
+source: opengraph/_tmp/
+destination: opengraph/_svg/
+
