@@ -61,6 +61,9 @@ lang: uk
 {%- if page.opengraph %}
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:image" content="{{ site.http_url }}{{ site.baseurl }}/{{ page.opengraph }}">
+{%- else if page.opengraph_generator %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="{{ site.http_url }}{{ site.baseurl }}/opengraph/{{ page.date | date: '%Y-%m-%d' }}-{{ page.slug }}.png">
 {%- else %}
     <meta name="twitter:card" content="summary">
     <meta property="og:image" content="{{ site.http_url }}{{ site.baseurl }}/opengraph.png">
