@@ -9,7 +9,6 @@
     .big2 { fill: #ff0 }
   </style>
   <rect x="0" y="0" width="1200" height="630" class="bg" />
-  <!-- image href="../favicon.svg" x="180" y="25" width="60" height="60" / -->
   <rect x="820" y="75" width="200" height="215" class="smoke1" />
   <rect x="720" y="175" width="200" height="215" class="smoke1" />
   <rect x="120" y="275" width="200" height="215" class="smoke2" />
