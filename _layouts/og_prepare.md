@@ -1,28 +1,28 @@
-{%- if page.opegraph_generator -%}
+{%- if page.opengraph_generator -%}
 ---
 permalink: '{{ page.date | date: '%Y-%m-%d' }}-{{ page.slug }}.svg'
-{%- if page.opegraph_generator.template %}
-layout: og_{{ page.opegraph_generator.template }}
+{%- if page.opengraph_generator.template %}
+layout: og_{{ page.opengraph_generator.template }}
 {%- else %}
 layout: og_default
 {%- endif %}
 
-{%- if page.opegraph_generator.label_row1 %}
-label_row1: {{ page.opegraph_generator.label_row1 }}
+{%- if page.opengraph_generator.label_row1 %}
+label_row1: {{ page.opengraph_generator.label_row1 }}
 {%- else %}
 label_row1: {{ page.title }}
 {%- endif %}
 
-{%- if page.opegraph_generator.label_row2 %}
-label_row2: {{ page.opegraph_generator.label_row2 }}
+{%- if page.opengraph_generator.label_row2 %}
+label_row2: {{ page.opengraph_generator.label_row2 }}
 {%- endif %}
 
-{%- if page.opegraph_generator.label_row3 %}
-label_row3: {{ page.opegraph_generator.label_row3 }}
+{%- if page.opengraph_generator.label_row3 %}
+label_row3: {{ page.opengraph_generator.label_row3 }}
 {%- endif %}
 
-{%- if page.opegraph_generator.key_color %}
-key_color: {{ page.opegraph_generator.key_color }}
+{%- if page.opengraph_generator.key_color %}
+key_color: {{ page.opengraph_generator.key_color }}
 {%- endif %}
 ---
 {% else -%}

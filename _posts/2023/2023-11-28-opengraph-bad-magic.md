@@ -3,7 +3,7 @@ title: OpenGraph bad magic
 title_lang: en
 date: 2023-11-28 04:43:23 +02:00
 mtime: 2023-12-05 12:55:41 +02:00
-opegraph_generator:
+opengraph_generator:
   template: clickbait01
   label_row1: Погана магія
   label_row2: OpenGraph
@@ -21,7 +21,7 @@ opegraph_generator:
 Хочеться написати у <span lang="en">front matter</span> поста якусь фігню́, типу такого:
 
 ```yaml
-opegraph_generator:
+opengraph_generator:
   template: clickbait01.svg
   label_row1: Погана магія
   label_row2: OpenGraph
@@ -62,7 +62,7 @@ key_color: ff0
 
 Секції з контентом немає, тільки <span lang="en">front matter</span>. Нам цього цілком і повністю має вистачити, щоб згенерувати <abbr>SVG</abbr> на наступному етапі.
 
-Для інших сторінок (тобто тих, у яких немає `opegraph_generator`) генерується якась тупа заглушка.
+Для інших сторінок (тобто тих, у яких немає `opengraph_generator`) генерується якась тупа заглушка.
 
 
 ### Етап 2 з 2: генерація
