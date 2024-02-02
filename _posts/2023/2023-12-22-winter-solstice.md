@@ -1,6 +1,7 @@
 ---
 title: Зимове сонцестояння
 date: 2023-12-22 18:37:04 +02:00
+mtime: 2024-02-02 13:27:54 +02:00
 opengraph_generator:
   template: clickbait01
   label_row1: Зимове

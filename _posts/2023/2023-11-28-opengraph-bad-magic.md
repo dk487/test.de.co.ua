@@ -2,7 +2,7 @@
 title: OpenGraph bad magic
 title_lang: en
 date: 2023-11-28 04:43:23 +02:00
-mtime: 2023-12-05 12:55:41 +02:00
+mtime: 2024-02-02 13:27:54 +02:00
 opengraph_generator:
   template: clickbait01
   label_row1: Погана магія
