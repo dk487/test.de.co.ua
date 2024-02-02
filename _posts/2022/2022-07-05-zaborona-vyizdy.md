@@ -49,7 +49,7 @@ mtime: 2022-07-16 22:34:25 +03:00
 > *Жодних вказівок на перешкоджання переміщенню осіб упродовж найближчих днів з боку військового командування не надава́лося.*
 >
 > Порядок надання дозволу за посиланням:
-> <https://www.zsu.gov.ua/new_page/62c430664909af0013650084>
+> ~~https://www.zsu.gov.ua/new_page/62c430664909af0013650084~~ ([архівована версія][8])
 
 Ну й добре.
 
@@ -120,3 +120,4 @@ mtime: 2022-07-16 22:34:25 +03:00
 [5]: https://www.facebook.com/GeneralStaff.ua/posts/pfbid02ya5jXFVa6aG2BwEGdSpDfyCZKRTGx9LNh7wjkEp9DadvyTg1coFH7XL2pCcWW35Jl
 [6]: https://www.pravda.com.ua/news/2022/07/5/7356530/
 [7]: https://www.pravda.com.ua/news/2022/07/6/7356632/
+[8]: http://web.archive.org/web/20220705133510/https://www.zsu.gov.ua/new_page/62c430664909af0013650084
