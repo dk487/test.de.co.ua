@@ -128,8 +128,10 @@ opengraph_generator:
         <span aria-hidden="true">|</span> <a href="{{ page.next.next.url }}">Наступний пост <span aria-hidden="true">&gt;&gt;&gt;</span></a>
 {%- endif %}
         <span aria-hidden="true">|</span> <a href="/rss.xml" type="application/rss+xml"><abbr lang="en">RSS</abbr></a>
+{%- comment %}
         <span aria-hidden="true">|</span> <a href="https://github.com/dk487/test.de.co.ua">Github</a>
-        <span aria-hidden="true">|</span> <a href="https://github.com/dk487/test.de.co.ua/blob/master/{{ page.path }}?plain=1">Джерельний код</a>
+{%- endcomment %}
+        <span aria-hidden="true">|</span> <a href="https://github.com/dk487/test.de.co.ua/blob/master/{{ page.path }}?plain=1">Github</a>
       </p>
     </footer>
   </body>
