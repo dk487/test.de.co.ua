@@ -1,7 +1,7 @@
 ---
 title: Arduino та бли́маючий світлодіо́д
 date: 2024-02-08 18:49:25 +02:00
-mtime: 2024-02-08 19:09:49 +02:00
+mtime: 2024-02-16 08:20:44 +02:00
 opengraph_generator:
   template: clickbait01
   label_row1: Arduino
@@ -169,21 +169,21 @@ void Debouncer::loopAt(unsigned long timeNow) {
 І, нарешті, фінальну частину зробимо такого вигляду:
 
 ```cpp
+BlinkingLED myBlinker(LED_BUILTIN);
 const int myButtonPin = 2;
 Debouncer myButton;
-BlinkingLED myBlinker(LED_BUILTIN);
 
 void setup() {
-  pinMode(myButtonPin, INPUT_PULLUP);
   myBlinker.setup();
   myBlinker.runPeriod = 250000; // 250ms
+  pinMode(myButtonPin, INPUT_PULLUP);
   myButton.readingSource = []() { return digitalRead(myButtonPin); };
   myButton.onFall = []() { myBlinker.enabled = !myBlinker.enabled; };
 }
 
 void loop() {
-  myButton.loop();
   myBlinker.loop();
+  myButton.loop();
 }
 ```
 
