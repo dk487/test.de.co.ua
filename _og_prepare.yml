@@ -32,3 +32,5 @@ exclude:
 - favicon.ico
 - favicon.svg
 - robots.txt
+- test.de.co.ua.tar.gz
+- BingSiteAuth.xml
