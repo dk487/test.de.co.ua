@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<svg viewBox="0 0 1200 630" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #666 }
+    .smoke1 { fill: #fff1 }
+    .smoke2 { fill: #fff1 }
+    .big { font-weight: bold; font-size: 125px; font-family: 'IBM Plex Serif' }
+    .big1 { fill: #fff }
+    .big2 { fill: #fff }
+  </style>
+  <rect x="0" y="0" width="1200" height="630" class="bg" />
+  <rect x="820" y="75" width="200" height="215" class="smoke1" />
+  <rect x="720" y="175" width="200" height="215" class="smoke1" />
+  <rect x="120" y="275" width="200" height="215" class="smoke2" />
+  <rect x="220" y="375" width="200" height="215" class="smoke2" />
+  <text x="600" y="350" text-anchor="middle" class="big big1">
+    Termux
+  </text>
+</svg>
