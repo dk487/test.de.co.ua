@@ -1,6 +1,12 @@
 ---
 title: «Незаконна діяльність VPN-сервісу»
 date: 2024-10-11 21:05:54 +03:00
+rss_only: true
+opengraph_generator:
+  template: clickbait01
+  label_row1: Нелегальний
+  label_row2: VPN
+  key_color: aaa
 ---
 
 Зроблю [копію посту][1] з сайту Національної поліції України. Без коментарів.
