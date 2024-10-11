@@ -1,6 +1,7 @@
 ---
 title: Регістри зсуву та уніполярні крокові двигуни
 date: 2024-07-31 16:45:32 +03:00
+mtime: 2024-10-11 22:42:41 +03:00
 opengraph: uploads/shift_stepper/board_og.jpg
 ---
 
