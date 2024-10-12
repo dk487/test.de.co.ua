@@ -2,6 +2,7 @@
 lang: en
 title: Shift registers and unipolar stepper motors
 date: 2024-10-11 22:42:41 +03:00
+mtime: 2024-10-12 23:51:09 +03:00
 opengraph: uploads/shift_stepper/board_og.jpg
 ---
 
@@ -252,7 +253,7 @@ def oneStep():
 
 ### File `main.py`
 
-Don't have a better idea than just rotate all three motors. For now, I use no more than two motors at a time, just as a precaution. With proper power supply, you can use all three at once.
+I couldn't think of anything better than just rotate all three motors. For now, I use no more than two motors at a time, just as a precaution. With proper power supply, you can use all three at once.
 
 ```python
 import myStepper, time
@@ -317,7 +318,7 @@ Of course, this "something" should be connected simply, without fuss. That is, i
 
 If you connect a servo drive, then, accordingly, it should have a standard three-pin connector (GND, +5V, PWM). Just have to decide how to solder it.
 
-Here is also only a "try-on", even without a diagram, just to estimate free place on the board:
+Here is also only a "try-on", even without a scheme, just to estimate free space on the board:
 
 <p markdown=0>
   <a href="/uploads/shift_stepper/4_mod2.webp" >
@@ -325,11 +326,11 @@ Here is also only a "try-on", even without a diagram, just to estimate free plac
   </a>
 </p>
 
-I especially want to talk about limit switches. They are often used so that when a printer-plotter-machine is turned on, the firmware can find the origin of the coordinates (because it is not known at which physical state the machine was at the time of MCU start).
+In addition, I want to say a couple of words about limit switches. They are often used when a printer, plotter or CNC machine is turned on, so the firmware can find the origin of the coordinates (because it is not known at which physical state the machine was at the time of MCU start).
 
-How many limit switches are needed for three motors that control three independent axes? I think that for convenience there can be any number of them, for example, one switch for each axis; but they must be connected in parallel to one GPIO. The axis positioning should be done sequentially.
+How many limit switches are needed for three motors controlling three independent axes? I think that for convenience there can be any number of them, for example, one switch for each axis; but they must be connected in parallel to one GPIO. The axis positioning should be done sequentially.
 
-The algorithm is simple: we move one axis until the limit switch is triggered, then back off a little until it is released, repeat the actions for the next axis. That's all! :) The machine is at the starting position.
+The algorithm is simple: we move one axis until the limit switch is triggered, then go back a little until it is released, repeat the actions for the next axis. That's all! :) The machine is at the starting position.
 
 
 ## Conclusions
