@@ -12,12 +12,12 @@ placeholder: here
 
 ## Опис завдання
 
-За задумом, жменька простого, тупого (і навіть тривіального) коду на Python працюватиме більш-менш однаково на двох достатньо різних платформах:
+За моїм задумом, жменька простого, тупого (місцями тривіального) коду на Python має працювати більш-менш однаково на двох достатньо різних платформах:
 
  - на якійсь ESP8266 (WeMos D1 mini) через MQTT + Wi-Fi, та
  - на Raspberry Pi Pico через `/dev/ttyASM0`, shell-скрипти та `socat`
 
-Що має робити цей код? Те саме, [що я вже робив][4] приблизно рік тому:
+Що має робити цей код? Те саме, [що я вже робив][4] півтора роки тому:
 
  - блимати світлодіодом
  - вмикати/вимикати блимання світлодіодом по команді, отриманій з MQTT
@@ -28,222 +28,336 @@ placeholder: here
 Додатковий бонус для ESP8266:
 
  - звітувати брокеру MQTT про свою наявність онлайн
- - звітувати (через last will) у випадку переходу в офлайн
- - використовувати флаг retain для звіту про онлайн/офлайн
+ - звітувати (через last will) про перехід в офлайн
+ - використовувати флаг retain для індикації стану онлайн/офлайн
 
-Заради цього мені знадобиться до біса допоміжного коду. Ну шо, погнали.
+Заради цього мені знадобиться купа допоміжного коду. Ну шо, погнали.
 
-
-## Вступ
-
-### Про повідомлення MQTT
-
-Вся ця фігня задумана для використання з красивими дашбордами на Node-RED. Має бути вимикач, в який можна ткнути мишкою і вплинути на світлодіод. А при натисканні фізичної кнопки на пристрої, при наявності зв'язку, вимикач на дашборді має сам по собі змінити стан.
-
-Традиційно, вся комунікація має відбуватися через два різних топіки: назвемо їх `dev/board07/led` та `dev/board07/led/set`. Їх призначення достатньо очевидне.
-
-Topic                 | Payload     | Напрямок передачі повідомлення
-----------------------|-------------|--------------------------------
-`dev/board07/led`     | `0` або `1` | звіт пристрою про стан
-`dev/board07/led/set` | `0` або `1` | команда від брокера до пристрою
-
-Сенс у тому, що один фізичний пристрій може керувати _декількома_ світлодіодами :) але наразі ми обійдемося лише одним.
-
-Просто така вже у мене склалася схема найменувань топіків. У моїй схемі, топік складається з частин, які я назву `global_prefix` (може бути порожнім), `topic_prefix` (завжди наявний) та `topic_suffix` (теж може бути порожнім):
-
-`global_prefix` | `topic_prefix` | `topic_suffix`
-----------------|----------------|-------------
-`dev/board07/`  | `led`          | `/set`
-
-
-### Базовий клас `BaseHandler`
-
-Кожен з _декількох_ світлодіодів, кожна кнопка, кожен серводвигун, кожен датчик температури і тиску — все це різний код, який має спільні риси. Тож мені потрібні певні рівні абстракції.
-
-По-перше, він повинен мати можливість спілкуватися з зовнішнім світом, приймати та відправляти повідомлення.
-
-По-друге, він має якось _працювати_. Овва, забув сказати, тут буде асинхронний код.
-
-```python
-class BaseHandler:
-    def __init__(self, broker, topic_prefix):
-        self.broker = broker
-        self.topic_prefix = topic_prefix
-        broker.subscribe(self)
-
-    def send(self, topic_suffix, payload):
-        topic = self.topic_prefix + topic_suffix
-        self.broker.send(topic, payload)
-
-    def handle(self, topic_suffix, payload):
-        pass
-
-    async def main(self):
-        pass
-```
-
-Як бачите, ми тут посилаємося на якийсь брокер повідомлень; клас брокера мусить реалізувати методи `subscribe()` та `send()`, щось типу такого:
-
-```python
-class Broker:
-    def __init__(self, global_prefix):
-        self.handlers = []
-        self.global_prefix = global_prefix
-
-    def subscribe(self, handler):
-        self.handlers.append(handler)
-
-    def send(self, topic, payload):
-        topic = self.global_prefix + topic
-        # тут має бути відправка повідомлення до MQTT брокера
-        raise NotImplementedError
-
-    def handle(self, topic, payload):
-        if topic.startswith(self.global_prefix):
-            topic = topic[len(self.global_prefix):]
-            for handler in self.handlers:
-                if topic.startswith(handler.topic_prefix):
-                    topic_suffix = topic[len(handler.topic_prefix):]
-                    handler.handle(topic_suffix, payload)
-```
 
 ## Реалізація
 
-### Клас `DemoLED`: нарешті, _блимаємо світлодіодом!_
+У мене було декілька спроб зробити це нормально. Я починав з налаштування мережі, комунікації з брокером MQTT, і виходило якось кострубато і некрасиво.
 
-Ось вони, два десятки рядків кода, заради яких все це.
+Але потім я підійшов з іншого боку. Взагалі відклав всю цю возню з мережею. У центрі мають бути не технічні деталі підключення до брокера, а внутрішні процеси і зв'язки. А, забув сказати, це має бути асинхронний код. Тож архітектура важлива.
+
+Почнемо з головного, зі світлодіода.
+
+
+### Чернетка
+
+Просто поблимаємо світлодіодом. Повільно і спокійно, на частоті 1 Гц, з затримкою 0,5 секунди.
 
 ```python
 import asyncio
+import machine
 
-class DemoLED(BaseHandler):
-    def __init__(self, broker, topic_prefix, pin):
-        super().__init__(broker, topic_prefix)
-        self.pin = pin
-        self.blinking = False
-
-    def handle(self, topic_suffix, payload):
-        if topic_suffix == '/set':
-            self.set(bool(int(payload)))
-
-    def set(self, new_blinking):
-        self.blinking = new_blinking
-        self.send('', int(self.blinking))
+class BlinkingLED:
+    def __init__(self, gpio):
+        self.gpio = gpio
+        self.is_blinking = True
 
     async def main(self):
         while True:
-            self.pin.value(int(self.blinking))
             await asyncio.sleep_ms(500)
-            self.pin.value(0)
+            self.gpio.value(int(self.is_blinking))
             await asyncio.sleep_ms(500)
-            self.send('', int(self.blinking))
+            self.gpio.value(0)
+
+try:
+    # WeMos D1 mini: built-in LED = pin D4 = GPIO2
+    led = machine.Pin(2, machine.Pin.OUT)
+    
+    # Raspberry Pi Pico: built-in LED = GPIO25
+    #led = machine.Pin(25, machine.Pin.OUT)
+
+    led_task = BlinkingLED(led)
+    asyncio.run(led_task.main())
+except KeyboardInterrupt:
+    print('Stopped')
 ```
 
+Окей. Це один процес. Мені знадобиться декілька різних процесів, які будуть щось робити: блимати світлодіодом, зчитувати стан кнопки, комунікувати з зовнішнім світом. Кожен з цих процесів — якийсь об'єкт з методом `main`, всередині якого нескінченний цикл.
 
-### Клас `DemoButton`
-
-TODO FIXME: debounce, onPress / onRelease callbacks
-
-
-### Зберемо все це докупи
-
-TODO FIXME
-
-Отут має бути купа спагетті-кода, який я ще не написав. Попередня версія прошивки для керування кроковими двигунами не годиться, її треба переписати.
-
-До того ж, підключення до Wi-Fi треба переробити таким чином, щоб воно відбувалося асинхронно.
-
-
-## Розбіжності, яких не вдалося уникнути
-
-
-### Кнопка BOOTSEL
-
-На платі Raspberry Pi Pico є кнопка BOOTSEL, стан якої (натиснута/не натиснута) можна зчитати через функцію `rp2.bootsel_button()`. На жаль, через стандартний для GPIO клас `machine.Pin` дістатися цієї кнопки неможливо.
-
-Але що як я хочу використовувати BOOTSEL замість окремої кнопки? Зокрема, у класі `DemoButton`?
-
-Нам же насправді від цього класу треба лише один метод `value()`, тож…
+Додамо ще один процес, який кожні 5 секунд буде вмикати або вимикати режим блимання цього світлодіода. І ще додамо якийсь клас, який запускатиме декілька різних процесів разом. І, звісно, зміниться шматок кода для запуска цього. Але клас `BlinkingLED` з попереднього лістингу кода залишається без змін.
 
 ```python
-import rp2
+class DemoScenario:
+    def __init__(self, led_task):
+        self.led_task = led_task
 
-class BootselPinIn:
-    def value(self):
-        return 1 - rp2.bootsel_button()
+    async def main(self):
+        while True:
+            await asyncio.sleep(5)
+            self.led_task.is_blinking = not self.led_task.is_blinking
+
+class App:
+    tasks = []
+
+    async def main(self):
+        tasks = [task.main() for task in self.tasks]
+        await asyncio.gather(*tasks)
+
+try:
+    led = machine.Pin(2, machine.Pin.OUT)
+    led_task = BlinkingLED(led)
+    demo = DemoScenario(led_task)
+    app = App()
+    app.tasks.append(led_task)
+    app.tasks.append(demo)
+    asyncio.run(app.main())
+except KeyboardInterrupt:
+    print('Stopped')
 ```
 
-Значення інвертується, щоб поведінка була як у `Pin.IN` в режимі `Pin.PULL_UP`.
-
-Об'єкт цього класу можна передавати в `DemoButton` замість `machine.Pin`.
+Вже цікавіше! Але тут я бачу одну _слабку_ ділянку архітектури: _сильну_ зв'язаність між об'єктами класів `DemoScenario` та `BlinkingLED`. Клас сценарію напряму керує станом світлодіода. Хочу, щоб керування це відбувалося не напряму, а через повідомлення, як з брокером MQTT.
 
 
-### Інвертований світлодіод
+### Про повідомлення MQTT
 
-На платі Raspberry Pi Pico є вбудований світлодіод (GPIO25), і на платах ESP8266 теж є вбудований світлодіод (GPIO2). Але є важлива різниця.
+Вся ця фігня задумана для використання з красивими дашбордами на Node-RED. Має бути вимикач на дашборді, в який можна ткнути мишкою.
 
-Вбудований світлодіод Raspberry Pi Pico світиться, якщо подати на відповідний GPIO високий рівень сигналу, і не світиться якщо встановити низький рівень сигналу. Поведінка ESP8266 протилежна: високий рівень сигналу там _вимикає_ світлодіод.
+Кожен пристрій має своє ім'я, наприклад `board98` та `board99`. Всі повідомлення в MQTT, що стосуються певної плати, повинні мати топік з певним префіксом — `dev/board99`, `home/kitchen/board99` або просто `board99`.
 
-Тобто, клас `DemoLED` в режимі «не блимати» має різну поведінку на Raspberry Pi Pico та ESP8266: для RP2 вимикання режиму блимання робить світлодіод неактивним, а для ESP8266 вимикання режиму блимання врубає світлодіод на повну. (В режимі «блимати» вони все ж виглядають однаково). Тож треба з цим щось зробити, чи не так?
+Традиційно, вся комунікація з _одним_ світлодіодом має відбуватися через _два_ різних топіки: назвемо їх `board99/led` та `board99/led/set`.
 
-Окей, давайте і тут зробимо щось сумнівне… 
+Topic             | Payload     | Напрямок передачі повідомлення
+------------------|-------------|--------------------------------
+`board99/led`     | `0` або `1` | звіт пристрою про стан
+`board99/led/set` | `0` або `1` | команда від брокера до пристрою
+
+Префікс потрібний для комунікації з зовнішнім світом, а внутрішні зв'язки (наприклад, між кнопкою і світлодіодом) обходяться без префіксу.
+
+
+### Локальний хаб повідомлень
+
+Задум такий: без всякого зовнішнього брокера MQTT передавати повідомлення всім зацікавленим процесам. Кожен з процесів, в свою чергу, може щось з цим зробити на свій розсуд.
+
+Цього разу всі класи змінилися, включаючи `BlinkingLED`.
 
 ```python
-class InvertedPinOut:
-    def __init__(self, pin):
-        self.pin = pin
+import asyncio
+import machine
 
-    def value(self, new_value):
-        self.pin.value(1 - new_value)
+class App:
+    tasks = []
+    listeners = []
+
+    def add(self, obj):
+        if hasattr(obj, 'main'):
+            self.tasks.append(obj)
+        if hasattr(obj, 'handle'):
+            self.listeners.append(obj)
+
+    async def main(self):
+        tasks = [task.main(self) for task in self.tasks]
+        await asyncio.gather(*tasks)
+
+    def handle(self, topic, payload):
+        for listener in self.listeners:
+            listener.handle(topic, payload)
+
+class BlinkingLED:
+    def __init__(self, gpio, topic):
+        self.gpio = gpio
+        self.is_blinking = True
+        self.topic = topic
+
+    async def main(self, app):
+        while True:
+            await asyncio.sleep_ms(500)
+            self.gpio.value(int(self.is_blinking))
+            app.handle(self.topic, int(self.is_blinking))
+            await asyncio.sleep_ms(500)
+            self.gpio.value(0)
+            app.handle(self.topic, 0)
+
+    def handle(self, topic, payload):
+        if topic == self.topic+'/set':
+            self.is_blinking = bool(int(payload))
+
+class DemoScenario:
+    def __init__(self, led_topic):
+        self.led_topic = led_topic
+
+    async def main(self, app):
+        while True:
+            await asyncio.sleep(5)
+            app.handle(self.led_topic, 0)
+            await asyncio.sleep(5)
+            app.handle(self.led_topic, 1)
+
+class DebugMessages:
+    def handle(self, topic, payload):
+        print(topic, payload)
+
+try:
+    app = App()
+    led = machine.Pin(2, machine.Pin.OUT)
+    app.add(BlinkingLED(led, 'led'))
+    app.add(DemoScenario('led/set'))
+    app.add(DebugMessages())
+    asyncio.run(app.main())
+except KeyboardInterrupt:
+    print('Stopped')
 ```
 
-Об'єкт цього класу можна передавати в `DemoLED` замість `machine.Pin`. Норм чи крінж?
+Є певна асиметричність у поведінці цих класів. Клас `BlinkingLED` як приймає повідомлення, так і відправляє. Клас `DemoScenario` лише відправляє повідомлення. Клас `DebugMessages` лише приймає. і у нього немає метода `main`.
 
-Альтернативно, ми можемо додати в клас `DemoLED` властивість `is_inverted` і додаткову логіку:
+У попередній версії я намагався на рівні класа `App` визначати, які процеси мають отримати кожне окреме повідомлення. Цього разу я відправляю всі повідомлення всім слухачам, а вони розбираються, що їм треба. Наприклад, клас `DebugMessages` опрацьовує всі повідомлення.
 
-```diff
-     async def main(self):
-         while True:
--            self.pin.value(int(self.blinking))
-+            self.pin.value(int(self.blinking ^ self.is_inverted))
-             await asyncio.sleep_ms(500)
--            self.pin.value(0)
-+            self.pin.value(int(self.is_inverted)
-             await asyncio.sleep_ms(500)
-             self.send('', int(self.blinking))
+Коли я в IDE Thonny запускаю на мікроконтролері цей код, то бачу в консолі щось таке:
+
+```
+led 1
+led 0
+led 1
+led 0
+led 1
+led 0
+led 1
+led 0
+led 1
+led/set 0
+led 0
+led 0
+led 0
+led 0
 ```
 
+Спочатку блимали світлодіодом, потім не блимаємо. Видно як стан світлодіода, так і команду, яка переменула режим.
 
-Або так: зробити в класі властивості `value_on` та `value_off` (за замовчанням (для звичайних світлодіоів), значення 1 та 0, відповідно). Ще довше, але у певному сенсі наочніше.
+Дико переускладнений варіант: 64 рядки асинхронного коду там, де того ж самого результату можна було б досягти в три рядки і два цикли :) але, на мою думку, це має бути більш-менш правильний підхід, з точки зору мого задуму. Бо далі буде більше коду.
 
-```diff
-     async def main(self):
-         while True:
--            self.pin.value(int(self.blinking))
-+            self.pin.value(self.value_on if self.blinking else self.value_off)
-             await asyncio.sleep_ms(500)
--            self.pin.value(0)
-+            self.pin.value(self.value_off)
-             await asyncio.sleep_ms(500)
-             self.send('', int(self.blinking))
+
+### З'єднання з зовнішнім світом
+
+Це буде розповідь про ESP8266, яку ми любимо за її Wi-Fi.
+
+Припустимо, весь попередній код ми писали в `main.py`, що є цілком традиційним підходом. Нехай у нас також є `boot.py`, і там ми напишемо пароль від вайфаю:
+
+```
+import network
+
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+if not wlan.isconnected():
+    wlan.connect('ssid', 'password')
 ```
 
-Як краще? Треба подумати.
+Оцей от `wlan.connect` лише _розпочинає_ процес з'єднання. Тобто весь цей фрагмент коду не заблокує нам виконання програми на декілька секунд.
+
+Тепер в основному `main.py` додамо ось такий клас:
+
+```python
+import umqtt.simple
+
+class WirelessMQTT:
+    def __init__(self, server, prefix, **kwargs):
+        self.wlan = network.WLAN(network.STA_IF)
+        self.prefix = prefix+'/'
+        kwargs['keepalive'] = 2
+        self.mq = umqtt.simple.MQTTClient(prefix, server, **kwargs)
+        self.mq.set_last_will(self.prefix+'online', b'0', retain=True)
+        self.mq.set_callback(self.mqtt_callback)
+        self.nodup_t = self.nodup_p = None
+
+    async def main(self, app):
+        self.app = app
+        while not self.wlan.isconnected():
+            await asyncio.sleep(0)
+        self.mq.connect()
+        self.mq.publish(self.prefix+'online', b'1', retain=True)
+        self.mq.subscribe(self.prefix+'+/set')
+        await asyncio.gather(self.ping(), self.check_msg())
+
+    async def ping(self):
+        while True:
+            self.mq.ping()
+            await asyncio.sleep(1)
+
+    async def check_msg(self):
+        while True:
+            self.mq.check_msg()
+            await asyncio.sleep(0)
+
+    def mqtt_callback(self, topic, payload):
+        topic, payload = topic.decode(), payload.decode()
+        if topic.startswith(self.prefix):
+            topic = topic[len(self.prefix):]
+            self.nodup_t, self.nodup_p = topic, payload
+            self.app.handle(topic, payload)
+            self.nodup_t = self.nodup_p = None
+
+    def handle(self, topic, payload):
+        if self.mq and self.mq.sock:
+            if isinstance(payload, int):
+                payload = str(payload)
+            if topic != self.nodup_t or payload != self.nodup_p:
+                self.mq.publish(self.prefix+topic, payload)
+```
+
+І в кінці файлу, там де ми ініціалізуємо всі процеси і складаємо їх в один клас `App`, додаємо виклик цього класу:
+
+```python
+app.add(WirelessMQTT('192.168.0.123', 'board99'))
+```
+
+Коли ESPшка з'єднається з мережею і підключиться до брокера MQTT, то всі наші повідомлення почнуть передаватися назовні. І, відповідно, зовнішні повідомлення передаватимуться класам, таким як `BlinkingLED`.
+
+Цей код не дуже елегантний, але він працює.
 
 
-## Результат
+### З'єднання з зовнішнім світом _через кабель_
 
-TODO FIXME
+Тепер черга для Raspberry Pi Pico, до якої можна дістатися через `/dev/ttyACM0` за допомогою [програми `socat` та моїх скриптів][4]. Тут все інакше і дикіше.
 
-Хочу зробити красиву фотку цих двох плат, і ще хочу декілька скріншотів Node-RED.
+```python
+import sys
+import select
+
+class StdioConnector:
+    def __init__(self, prefix):
+        self.prefix = prefix+'/'
+        self.nodup_t = self.nodup_p = None
+
+    async def main(self, app):
+        poller = select.poll()
+        poller.register(sys.stdin, select.POLLIN)
+        while True:
+            res = poller.poll(0)
+            if res:
+                line = sys.stdin.readline().strip()
+                if line:
+                    topic, payload = line.split(' ', 1)
+                    if topic.startswith(self.prefix):
+                        topic = topic[len(self.prefix):]
+                        self.nodup_t, self.nodup_p = topic, payload
+                        app.handle(topic, payload)
+                        self.nodup_t = self.nodup_p = None
+            await asyncio.sleep(0)
+    
+    def handle(self, topic, payload):
+        if topic != self.nodup_t or payload != self.nodup_p:
+            print(self.prefix+topic, payload)
+```
+
+Отак.
 
 
 ## Висновки
 
-TODO FIXME
+Я пропущу питання з кнопкою, тим більше що у мене нашвидкоруч зроблений варіант без debounce. Також пропущу незграбні моменти з тим, що onboard світлодіод на ESPшці інвертований, а на Pi Pico він нормальний. Просто обмежусь тим, що в «фінальній» версії (тобто фінальній на сьогодні) я блимаю світлодіодом у енергійному темпі, коли кнопка натиснена.
 
+Головне: вся ця катавасія дійсно працює, як локально, так і з зовнішнім брокером MQTT. Як по Wi-Fi, так і по кабелю. Можна в Node-RED робити зв'язки однієї плати з іншою. Зашибісь.
+
+ * [Код для ESP8266][5]
+ * [Код для RP2040][6]
+
+Невелике відео демонстрації роботи на YouTube: <https://youtu.be/_cbC2cjzg2k>
 
 [1]: /2025/03/23/pro-svitlodiody.html
 [2]: https://uk.wikipedia.org/wiki/Don%27t_repeat_yourself
 [3]: https://uk.wikipedia.org/wiki/%D0%92%D0%B8%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%BE_%D0%BD%D0%B5_%D0%BD%D0%B0%D0%BC%D0%B8
 [4]: /2024/03/18/mqtt-oop.html
+[5]: https://github.com/kastaneda/mpy_sandbox/blob/master/just_pep8/f/main.py
+[6]: https://github.com/kastaneda/mpy_sandbox/blob/master/just_pep8/f/main_rp2040.py
