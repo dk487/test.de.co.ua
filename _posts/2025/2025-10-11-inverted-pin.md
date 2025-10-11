@@ -1,6 +1,7 @@
 ---
 title: Інвертований світлодіод
 date: 2025-10-11 23:15:28 +03:00
+mtime: 2025-10-12 00:21:16 +03:00
 ---
 
 На платі Raspberry Pi Pico є вбудований світлодіод (GPIO25), і на платах ESP8266 теж є вбудований світлодіод (GPIO2). Але є важлива різниця.
@@ -55,7 +56,7 @@ class InvertedPinOut:
 Увага, правильна відповідь, щойно випадково знайдена в документації: можна використати вже наявний в стандартній бібліотеці [клас `machine.Signal`][2]:
 
 ```python
-led = machine.Signal(machine.Pin(2, machine.Pin.OUT), inverted=True)
+led = machine.Signal(machine.Pin(2, machine.Pin.OUT), invert=True)
 ```
 
 Яка проста і прикольна штука!
