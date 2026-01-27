@@ -2,7 +2,7 @@
 title: Everything In Its Right Place
 title_lang: en
 date: 2022-01-09 17:59:48 +02:00
-mtime: 2022-01-19 23:26:37 +02:00
+mtime: 2026-01-27 22:28:06 +02:00
 ---
 
 Сьогодні буде пост про музику.
@@ -17,6 +17,8 @@ mtime: 2022-01-19 23:26:37 +02:00
 
 І покласти її у правильне місце.
 
+_Оновлення від 2026-01-27:_ [знайшов][8].
+
 [1]: https://www.youtube.com/watch?v=NUnXxh5U25Y
 [2]: https://uk.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BF%D1%80%D0%BE%D1%89%D0%B5%D0%BD%D0%BD%D0%B0
 [3]: https://en.wikipedia.org/wiki/The_Unforgivable
@@ -24,3 +26,4 @@ mtime: 2022-01-19 23:26:37 +02:00
 [5]: https://m.imdb.com/title/tt11233960/soundtrack/
 [6]: https://en.wikipedia.org/wiki/Katia_and_Marielle_Lab%C3%A8que
 [7]: https://www.youtube.com/watch?v=N3Mk8fo71RM
+[8]: https://soundcloud.com/olan-nine/unforgivable-emotions
