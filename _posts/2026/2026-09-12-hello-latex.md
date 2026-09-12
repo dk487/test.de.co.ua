@@ -13,7 +13,7 @@ DOC ?= main
 all: $(DOC).pdf
 
 .SECONDEXPANSION:
-%.pdf: %.tex $$(wildcard %_*.tex) $$(wildcard %.bbl)
+%.pdf: %.tex $$(wildcard %_*.tex) $$(wildcard %.bib)
 	latexmk -xelatex -interaction=nonstopmode $<
 
 clean: purge
